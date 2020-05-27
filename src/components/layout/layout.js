@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import './styles.css'
 
 import Footer from './Footer'
 import NavBar from './NavBar'
@@ -8,16 +8,6 @@ import NavBar from './NavBar'
 
 
 const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
-
   return (
     <>
     <NavBar/>
@@ -26,6 +16,7 @@ const Layout = ({ children }) => {
     </>
   )
 }
+
 
 
 export default Layout

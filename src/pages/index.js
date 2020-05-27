@@ -7,7 +7,6 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <h1>HIIII This is the Jpc homepage I am restarting the development of this site</h1>
-    <Link to='/contact'>Contact</Link>
   </Layout>
 )
 
