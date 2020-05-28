@@ -35,6 +35,7 @@ const Footer = () => {
         </Column>
       </Main>
       <Copyright>Copyright &copy; {(new Date().getFullYear())} JPC, LLC</Copyright>
+      <Copyright style={{padding: '0px'}}>Created by Madison Haradine</Copyright>
     </Foot>
   )
 }
@@ -73,6 +74,7 @@ const StyledLink = styled(Link)`
   padding: 1px 0;
   font-size: 0.9rem;
 
+
   :hover{
     color: ${palette.SECONDARY_COLOR}
   }
@@ -89,7 +91,7 @@ const Copyright= styled.div`
   justify-content: center;
   text-transform: uppercase;
   font-size: 11px;
-  padding: 8px 0;
+  padding: 8px 0 0;
 `
 
 export default Footer

@@ -17,37 +17,35 @@ const NavBar = () => {
         <Logo src={logo} alt="JPC logo"/>
       </LogoBox>
       <Links>
-        <Column>
-          <AiOutlineHome 
+          <StyledLink to='/'>
+            <AiOutlineHome 
+              style={{ 
+              fontSize: '40px'}}/>
+            <h5>Home</h5>
+          </StyledLink>
+          <StyledLink to='/services/'>
+            <FaTools 
             style={{ 
             fontSize: '40px'}}/>
-          <StyledLink to='/'>Home</StyledLink>
-        </Column>
-        <Column>
-          <FaTools 
-          style={{ 
-          fontSize: '40px'}}/>
-          <StyledLink to='/services/'>Services</StyledLink>
-        </Column>
-        <Column>
-          <GiFactory 
-          style={{ 
-          fontSize: '40px'}}/>
-          <StyledLink to='/capabilities/'>Capabilities</StyledLink>
-        </Column>
-        <Column>
-          <MdPermMedia 
-          style={{ 
-          fontSize: '40px'}}/>
-          <StyledLink to='/portfolio/'>Portfolio
-        </StyledLink>
-        </Column>
-        <Column>
-          <FaPhone 
-          style={{
-          fontSize: '40px'}}/>
-          <StyledLink to='/contact/'>Contact</StyledLink>
-        </Column>
+            <h5>Services</h5>
+          </StyledLink>
+          <StyledLink to='/capabilities/'>
+            <GiFactory 
+            style={{ 
+            fontSize: '40px'}}/>
+            <h5>Capabilities</h5>
+          </StyledLink>
+          <StyledLink to='/portfolio/'>
+            <MdPermMedia 
+            style={{ 
+            fontSize: '40px'}}/>
+            <h5>Portfolio</h5>
+           </StyledLink>
+          <StyledLink to='/contact/'>
+            <FaPhone 
+            style={{
+            fontSize: '40px'}}/>
+            <h5>Contact</h5></StyledLink>
       </Links>
       <PhoneBox>
         <PhoneButton>+1(574)293-8030</PhoneButton>
@@ -91,6 +89,14 @@ const StyledLink = styled(Link)`
   margin: 15px 2.4rem -5px;
   font-size: 0.8rem;
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  :hover{
+    color: ${palette.SECONDARY_COLOR};
+  }
 `
 const Column = styled.div`
   display: flex;
