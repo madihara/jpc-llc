@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: '.env'
+});
+
 module.exports = {
   siteMetadata: {
     title: `JPC, LLC`,
@@ -18,6 +22,13 @@ module.exports = {
       options: {
         // Add any options here
       },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
+        accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

@@ -87,15 +87,20 @@ const Links = styled.div`
 const StyledLink = styled(Link)`
   text-decoration: none;
   margin: 15px 2.4rem -5px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: .7s;
 
   :hover{
     color: ${palette.SECONDARY_COLOR};
+  }
+
+  h5{
+    font-weight: 300;
   }
 `
 const Column = styled.div`
@@ -125,6 +130,15 @@ const PhoneButton = styled.button`
   font-size: 1rem;
   margin-top: 1rem;
   margin-right: 1rem;
+  transition: 0.3s;
+  /* position: absolute; */
+  /* right: 0; */
+
+
+  :hover{
+    box-shadow: 1px 1px 10px #ececec;
+    cursor: pointer;
+  }
 `
 
 export default NavBar

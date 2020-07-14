@@ -2,11 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout/layout"
 import SEO from "../components/layout/seo"
-import Home from '../components/HomePage/Home'
+import About from '../components/HomePage/About'
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 import {graphql} from 'gatsby'
 import DetailBox from '../components/SharedComponents/DetailBox'
+import CADInfo from '../components/HomePage/CADInfo'
 
 import * as palette from '../variables/Variables'
 
@@ -24,11 +25,18 @@ const IndexPage = ({data}) => (
             <SubTitle>
             At JPC we have been manufacturing quality industrial textiles since 1984. From large commercial production to custom projects, we have the experience to make your next project a success.
             </SubTitle>
+            <Link to='/contact'>
+              <ContactButton>
+                Contact Us &rarr;
+              </ContactButton>
+            </Link>
           </Box>
         </Container>
       </StyledImage>
       <DetailBox />
     </Hero>
+    <About />
+    <CADInfo />
   </Layout>
 )
 
@@ -50,11 +58,13 @@ const Hero = styled.div`
   display: flex;
   flex-direction: row;
   flex: auto;
+
+  
   
 `
 
 const StyledImage = styled(BackgroundImage)`
-  height: 110vh;
+  height: 109vh;
   width: 75%;
 `
 const Container = styled.div`
@@ -75,10 +85,29 @@ const Box= styled.section`
 const Title = styled.h1`
   text-transform: uppercase;
   color: white;
-  font-size: 5rem;
-  line-height: 4rem;
+  font-size: 4rem;
+  line-height: 3.5rem;
+  font-weight: 800;
 `
 
 const SubTitle=styled.h3`
   color: white;
+  font-weight: 400;
 `
+const ContactButton = styled.button`
+  border-radius: 50px;
+  border: none;
+  background: ${palette.SECONDARY_COLOR};
+  color: white;
+  padding: 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: 0.4s;
+
+  :hover{
+    background:white;
+    color: ${palette.MAIN_COLOR};
+    cursor: pointer;
+    }
+  `

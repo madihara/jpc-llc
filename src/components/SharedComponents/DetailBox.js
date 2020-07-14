@@ -3,18 +3,30 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 import {StaticQuery, graphql} from 'gatsby'
 
+import image1 from '../../images/grommets.jpg'
+import image2 from '../../images/buckles.jpg'
+import image3 from '../../images/velcro2.jpg'
+
+import * as palette from '../../variables/Variables'
+
 
 const DetailBox = ({props}) => {
   return (
    <Section>
     <Box>
-      3d CAD Measurements
+      <Image src={image1} alt="" />
+      <Title>3d CAD Measurements</Title>
+      <LearnMore>Learn More &#62;</LearnMore>
     </Box>
     <Box>
-      Commercial Sewing
+      <Image src={image2} alt="" />
+      <Title>Commercial Sewing</Title>
+      <LearnMore>Learn More &#62;</LearnMore>
     </Box>
     <Box>
-    Other Services
+     <Image src={image3} alt="" />
+      <Title>Other Services</Title>
+      <LearnMore>Learn More &#62;</LearnMore>
     </Box>
 </Section>
   )
@@ -32,10 +44,37 @@ const Box = styled.div`
   margin: 1rem;
   width: 90%;
   height: 250px;
+  transition: .7s;
+
+  :hover{
+    border: 3px solid ${palette.SECONDARY_COLOR};
+    color: ${palette.SECONDARY_COLOR};
+  }
 `
 
-const Image = styled(Img)`
-  height: 100px;
+const Image = styled.img`
+  height: 160px;
+  width: 100%;
+  filter: grayscale(100%);
+  object-fit: cover;
+`
+
+const Title = styled.h3`
+  font-weight: 600;
+  margin: 10px 0 0;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding-left: 15px;
+`
+
+const LearnMore = styled.h5`
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  padding-left: 15px;
+  color: ${palette.SECONDARY_COLOR};
+  font-size: 1rem;
+  letter-spacing: 1.5px;
 `
 
 
