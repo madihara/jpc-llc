@@ -11,9 +11,6 @@ import * as palette from '../../variables/Variables'
 const About = (props) => {
   return (
     <AboutContainer>
-      <ImageBox>
-        <Image src={sewingmachine} alt="sewing maching" />
-      </ImageBox>
       <TextBox>
         <Title>
           About Us
@@ -27,10 +24,10 @@ const About = (props) => {
         <Paragraph>
         At JPC we offer best in class commercial sewing and innovative solutions for our customers. If you have any fabric production needs, we are here to help! We pride ourselves in our long history of providing our customers with top of the line products and services. Quality and consistency are our highest priorities and we strive to ensure client satisfaction with short lead times.
         </Paragraph>
-        <Paragraph>
-        We are also happy to now offer ___ with top of the line 3D CAD scanning capabilities, ensuring our measurements will be precise and fit perfectly. ADD A BIT MORE
-        </Paragraph>
       </TextBox>
+      <ImageBox>
+        <Image src={sewingmachine} alt="sewing maching" />
+      </ImageBox>
     </AboutContainer>
   )
 }
@@ -38,24 +35,22 @@ const About = (props) => {
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: row;
-  /* padding: 3rem 0; */
+  margin: 9rem 0;
 `
 
 const ImageBox = styled.div`
   width: 40%;
+  background: ${palette.MAIN_COLOR};
 `
 
 const Image = styled.img`
-  transform: scaleX(-1);
-  margin-left: -450px;
-  height: 600px;
+  height: 550px;
   filter: grayscale(100%);
 `
 
 const TextBox= styled.div`
   width: 60%;
-  padding: 2rem 4rem;
-  /* text-align: right; */
+  padding: 0 4rem;
   background: ${palette.MAIN_COLOR};
 `
 const Title = styled.h3`

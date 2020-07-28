@@ -15,7 +15,7 @@ const DetailBox = ({props}) => {
    <Section>
     <Box>
       <Image src={image1} alt="" />
-      <Title>3d CAD Measurements</Title>
+      <Title>3d CAD Technology</Title>
       <LearnMore>Learn More &#62;</LearnMore>
     </Box>
     <Box>
@@ -25,7 +25,7 @@ const DetailBox = ({props}) => {
     </Box>
     <Box>
      <Image src={image3} alt="" />
-      <Title>Other Services</Title>
+      <Title>Custom Projects</Title>
       <LearnMore>Learn More &#62;</LearnMore>
     </Box>
 </Section>
@@ -37,25 +37,30 @@ const Section = styled.div`
   flex-direction: column;
   /* justify-content: stretch; */
   /* align-items: center; */
+  max-height: 100%;
+  flex-basis: 25%;
 `
 
 const Box = styled.div`
-  border: 3px solid #ececec;
+  border: 6px solid ${palette.SECONDARY_COLOR};
   margin: 1rem;
-  width: 90%;
-  height: 250px;
+  width: 87%;
+  min-width: 200px;
   transition: .7s;
+  /*filter: grayscale(100%);*/
 
   :hover{
-    border: 3px solid ${palette.SECONDARY_COLOR};
     color: ${palette.SECONDARY_COLOR};
+    border: 6px solid ${palette.SECONDARY_COLOR};
+    filter: grayscale(100%);
+    opacity: 70%;
   }
 `
 
 const Image = styled.img`
   height: 160px;
   width: 100%;
-  filter: grayscale(100%);
+  
   object-fit: cover;
 `
 

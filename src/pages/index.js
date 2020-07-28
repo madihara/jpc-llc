@@ -6,7 +6,7 @@ import About from '../components/HomePage/About'
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 import {graphql} from 'gatsby'
-import DetailBox from '../components/SharedComponents/DetailBox'
+import DetailBox from '../components/HomePage/DetailBox'
 import CADInfo from '../components/HomePage/CADInfo'
 
 import * as palette from '../variables/Variables'
@@ -55,10 +55,10 @@ export const pageQuery = graphql`
 `;
 
 const Hero = styled.div`
+position: relative;
   display: flex;
-  flex-direction: row;
-  flex: auto;
-
+  flex-flow: row-wrap;
+  flex: 1;
   
   
 `
