@@ -33,16 +33,15 @@ const DetailBox = ({props}) => {
 }
 const Section = styled.div`
   width: 25%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: stretch; */
-  /* align-items: center; */
-  max-height: 100%;
   flex-basis: 25%;
+  min-width: 300px;
 `
 
 const Box = styled.div`
-  border: 6px solid ${palette.SECONDARY_COLOR};
+  border: 3px solid #ececec};
   margin: 1rem;
   width: 87%;
   min-width: 200px;
@@ -51,8 +50,7 @@ const Box = styled.div`
 
   :hover{
     color: ${palette.SECONDARY_COLOR};
-    border: 6px solid ${palette.SECONDARY_COLOR};
-    filter: grayscale(100%);
+    border: 3px solid ${palette.SECONDARY_COLOR};
     opacity: 70%;
   }
 `
@@ -74,11 +72,11 @@ const Title = styled.h3`
 
 const LearnMore = styled.h5`
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 6px;
   text-transform: uppercase;
   padding-left: 15px;
   color: ${palette.SECONDARY_COLOR};
-  font-size: 1rem;
+  font-size: 0.8rem;
   letter-spacing: 1.5px;
 `
 

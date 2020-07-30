@@ -8,12 +8,14 @@ import BackgroundImage from 'gatsby-background-image'
 import {graphql} from 'gatsby'
 import DetailBox from '../components/HomePage/DetailBox'
 import CADInfo from '../components/HomePage/CADInfo'
+import Industries from "../components/HomePage/Industries"
 
 import * as palette from '../variables/Variables'
 
 const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" />
+   
     <Hero>
       <StyledImage
         fluid={data.indexImage.childImageSharp.fluid}
@@ -37,6 +39,7 @@ const IndexPage = ({data}) => (
     </Hero>
     <About />
     <CADInfo />
+    <Industries />
   </Layout>
 )
 
@@ -58,7 +61,9 @@ const Hero = styled.div`
 position: relative;
   display: flex;
   flex-flow: row-wrap;
-  flex: 1;
+  height: 100%;
+  justify-content: stretch;
+  align-items: stretch;
   
   
 `

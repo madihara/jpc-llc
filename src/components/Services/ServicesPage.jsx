@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 import {graphql, useStaticQuery} from 'gatsby'
 
+import styles from './services.module.css'
+
 const ServicesPage = () => {
   
   const data = useStaticQuery(
@@ -36,15 +38,19 @@ const ServicesPage = () => {
       <ul>
         {data.allContentfulFeatureCard.edges.map(edge => {
           return(
-          
-            <li>
-              <img src={edge.node.icon.fluid.src} />
-              <h1>
-              {edge.node.title}
-              </h1>
-              <p>{edge.node.description.description}</p>
-            
-            </li>
+            <div className={styles.container}>
+              <div className={styles.info}>
+                <h3 className={styles.title}>
+                  {edge.node.title}
+                </h3>
+                <p className={styles.first}>
+                  paragraph
+                </p>
+              </div>
+              <div className={styles.image}>
+                </div>
+              </div>
+           
           )
         })}
       </ul>

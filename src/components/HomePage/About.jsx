@@ -1,10 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
 import sewingmachine from '../../images/Sewing-Machine-PNG-File.png'
 
-import BackgroundImage from 'gatsby-background-image'
-import { graphql } from 'gatsby'
 
 import * as palette from '../../variables/Variables'
 
@@ -13,16 +10,13 @@ const About = (props) => {
     <AboutContainer>
       <TextBox>
         <Title>
-          About Us
+          Best in class commercial sewing and innovative solutions for your textile needs.
         </Title>
-        <SubTitle>
-          JPC HAS BEEN SEWING QUALITY TEXTILES FOR OVER 28 YEARS.
-        </SubTitle>
         <Paragraph>
         Beginning in 1984, JPC started as a small, family run business in Elkhart, Indiana. We manufactured and provided floor mats for the thriving van conversion industry for many years. In time, JPC grew larger and we expanded our resources and expertise to provide sewn textiles to a variety of industries around the world.
         </Paragraph>
         <Paragraph>
-        At JPC we offer best in class commercial sewing and innovative solutions for our customers. If you have any fabric production needs, we are here to help! We pride ourselves in our long history of providing our customers with top of the line products and services. Quality and consistency are our highest priorities and we strive to ensure client satisfaction with short lead times.
+        If you have any fabric production needs, we are here to help! We pride ourselves in our long history of providing our customers with top of the line products and services. Quality and consistency are our highest priorities and we strive to ensure client satisfaction with short lead times.
         </Paragraph>
       </TextBox>
       <ImageBox>
@@ -35,44 +29,50 @@ const About = (props) => {
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 9rem 0;
+  margin: 4rem 0;
 `
 
 const ImageBox = styled.div`
-  width: 40%;
-  background: ${palette.MAIN_COLOR};
+  width: 55%;
+  /* background: ${palette.MAIN_COLOR}; */
 `
 
 const Image = styled.img`
-  height: 550px;
-  filter: grayscale(100%);
+  width: 80vw;
+  overflow: hidden;
+  filter: grayscale(50%);
 `
 
 const TextBox= styled.div`
   width: 60%;
-  padding: 0 4rem;
-  background: ${palette.MAIN_COLOR};
+  padding: 0 2rem 0 6rem;
+ 
 `
 const Title = styled.h3`
   font-weight: 800;
   text-transform: uppercase;
-  color: ${palette.SECONDARY_COLOR};
-  font-size: 8rem;
-  margin: 0;
+  color: #000;
+  font-size: 2.3rem;
+  margin: 5rem 0 2rem;
+  position: relative;
+  line-height: 2.4rem;
+  
+
+  &:before {
+    content:"";
+    display: block;
+    width: 120px;
+    height: 4px;
+    position: absolute;
+    background: ${palette.SECONDARY_COLOR};
+    top: -15px;
+  }
 `
 
-const SubTitle = styled.h5`
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 2rem;
-  padding-right: 6rem;
-  margin-top: -4.5rem;
-  margin-bottom: 0;
-  color: white;
-`
 const Paragraph = styled.p`
-  /* text-align: left; */
-  color: white;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 1.1rem;
 `
 
 export default About

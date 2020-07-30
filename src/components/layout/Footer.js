@@ -19,6 +19,9 @@ const Footer = () => {
           <StyledLink to='/portfolio'>
             Portfolio
           </StyledLink>
+          <StyledLink to="/aboutus">
+            About Us
+          </StyledLink>
           <StyledLink to='/contact'>Contact</StyledLink>
           <Logo src={logo} alt="jpc logo" />
         </Column>
@@ -29,8 +32,8 @@ const Footer = () => {
           </div>
         </Column>
       </Main>
-      <Copyright>Copyright &copy; {(new Date().getFullYear())} JPC, LLC</Copyright>
-      <Copyright style={{padding: '0px'}}>Created by Madison Haradine</Copyright>
+      <Copyright>Copyright &copy; {(new Date().getFullYear())} JPC, LLC &nbsp;&nbsp;|  &nbsp;&nbsp;  Created by Madison Haradine</Copyright>
+
     </Foot>
   )
 }

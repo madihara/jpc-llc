@@ -1,14 +1,14 @@
 import React from 'react'
 import Layout from '../components/layout/layout'
 import SEO from '../components/layout/seo'
-import ServicesPage from '../components/Services/ServicesPage'
+import ServicePage from '../components/Services/ServicePage'
 
 
 const Services = () => {
   return (
     <Layout>
       <SEO title='services'/>
-      <ServicesPage />
+      <ServicePage />
     </Layout>
   )
 }

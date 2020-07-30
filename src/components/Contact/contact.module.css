@@ -1,0 +1,110 @@
+:root{
+  --primaryColor:#091129 ;
+  --accentColor: #212890;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+  flex-flow: row wrap;
+  background-color: #ececec;
+}
+
+.box1 {
+  margin: 0 3rem 10rem;
+  padding: 2rem 1rem;
+  background-color: white;
+  border-radius: 10px;
+  padding-right: 10rem;
+}
+
+.box2 {
+  margin: 3rem 3rem 0rem -10rem;
+  padding: 3rem 1rem 2rem;
+  background-color: var(--primaryColor);
+  border-radius: 10px;
+  line-height: 0.9rem;
+  font-size: 0.8rem;
+}
+br {
+  display: block;
+  margin: 7px 0;
+}
+
+.subs {
+  color: white;
+  padding: 0.3rem 1rem 0.5rem 0;
+  font-weight: normal;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.formControl {
+  outline: none;
+  resize: none;
+  border: 1px solid #8b8b8b;
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  padding: 1rem;
+  margin: 1rem 0rem 1rem;
+  width: 540px;
+}
+
+.flex {
+  display: flex;
+}
+
+.text {
+  height: 200px;
+  resize: none;
+}
+
+.submit {
+  outline: none;
+  border: none;
+  background-color: var(--accentColor);
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+.contact {
+  align-content: space-around;
+  color: white;
+  margin-bottom: 1.3rem;
+}
+
+.icons {
+  height: 13px;
+  width: 13px;
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+}
+
+.title2 {
+  color: white;
+  font-size: 1.6rem;
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .box1 {
+    max-width: 95vw;
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .formControl {
+    min-height: 50px;
+    margin-bottom: 1rem;
+    width: 350px;
+  }
+  .box2 {
+    max-width: 95vw;
+    margin: 0;
+  }
+}

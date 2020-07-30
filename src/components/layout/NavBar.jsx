@@ -6,7 +6,8 @@ import logo from '../../images/icons/jpc-logocir.png'
 import {FaPhone, FaTools} from 'react-icons/fa'
 import { MdPermMedia} from 'react-icons/md'
 import {GiFactory} from 'react-icons/gi'
-import {AiOutlineHome} from 'react-icons/ai'
+import {AiOutlineHome, AiOutlineInfoCircle} from 'react-icons/ai'
+
 
 import * as palette from '../../variables/Variables'
 
@@ -20,31 +21,39 @@ const NavBar = () => {
           <StyledLink to='/'>
             <AiOutlineHome 
               style={{ 
-              fontSize: '40px'}}/>
+              fontSize: '30px'}}/>
             <h5>Home</h5>
           </StyledLink>
           <StyledLink to='/services/'>
             <FaTools 
             style={{ 
-            fontSize: '40px'}}/>
+            fontSize: '30px'}}/>
             <h5>Services</h5>
           </StyledLink>
           <StyledLink to='/capabilities/'>
             <GiFactory 
             style={{ 
-            fontSize: '40px'}}/>
+            fontSize: '30px'}}/>
             <h5>Capabilities</h5>
           </StyledLink>
           <StyledLink to='/portfolio/'>
             <MdPermMedia 
             style={{ 
-            fontSize: '40px'}}/>
+            fontSize: '30px'}}/>
             <h5>Portfolio</h5>
+           </StyledLink>
+           <StyledLink to='/aboutus/'>
+             <AiOutlineInfoCircle
+              style={{
+                fontSize:'30px',
+                
+              }}/>
+             <h5>About Us</h5>
            </StyledLink>
           <StyledLink to='/contact/'>
             <FaPhone 
             style={{
-            fontSize: '40px'}}/>
+            fontSize: '30px'}}/>
             <h5>Contact</h5></StyledLink>
       </Links>
       <PhoneBox>
@@ -86,7 +95,7 @@ const Links = styled.div`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  margin: 15px 2.4rem -5px;
+  margin: 10px 1.5rem -5px;
   font-size: 0.9rem;
   color: white;
   display: flex;
@@ -121,15 +130,14 @@ const PhoneBox = styled.div`
   padding-bottom: 1.3rem;
   padding-right: 3rem;
 `
-const PhoneButton = styled.button`
-  border-radius: 50px;
+const PhoneButton = styled.div`
+  border-radius: 0;
   background: ${palette.SECONDARY_COLOR};
   color: white;
   border: none;
   padding: 13px 2rem;
   font-size: 1rem;
   margin-top: 1rem;
-  margin-right: 1rem;
   transition: 0.3s;
   /* position: absolute; */
   /* right: 0; */
