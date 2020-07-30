@@ -34,33 +34,62 @@ const ServicesPage = () => {
   
   
   return (
+    <>
+    <Heading>Our Services</Heading>
     <Container>
-      <ul>
-        {data.allContentfulFeatureCard.edges.map(edge => {
-          return(
-            <div className={styles.container}>
-              <div className={styles.info}>
-                <h3 className={styles.title}>
-                  {edge.node.title}
-                </h3>
-                <p className={styles.first}>
-                  paragraph
-                </p>
-              </div>
-              <div className={styles.image}>
+        {data.allContentfulFeatureCard.edges.map((edge, index) => {
+          if (index % 2 === 0){
+            return(
+              <Row>
+                <div>
+                  <SubHeading>{edge.node.title}</SubHeading>
+                  <Text>{edge.node.description.description}</Text>
                 </div>
-              </div>
-           
-          )
+                <Image src={edge.node.icon.fluid.src}/>
+              </Row>
+            )
+          } else {
+            return(
+              <Row>
+                <Image src={edge.node.icon.fluid.src}/>
+                <div>{edge.node.title}</div>
+              </Row>
+            )
+          }
         })}
-      </ul>
     </Container>
+    </>
   )
 }
 
+const Heading = styled.h1`
+  font-weight: normal;
+  text-align: center;
+`
+
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+`
+const Row= styled.section`
+  display: flex;
+  justify-content: space-around;
+  margin: 3rem 0;
+`
+const SubHeading = styled.h3`
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+`
+const Text= styled.p`
+  padding: 0;
+  margin: 0;
+`
+const Image = styled.img`
+  width: 35%;
+  height: 50vh;
+
 `
 
 export default ServicesPage

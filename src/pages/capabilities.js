@@ -5,7 +5,7 @@ import SEO from '../components/layout/seo'
 const CapabilitiesPage = () => {
   return (
     <Layout>
-      <SEO title="capabilities"/>
+      <SEO title="Capabilities"/>
       Capabilities
     </Layout>
   )

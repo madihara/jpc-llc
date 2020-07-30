@@ -12,6 +12,9 @@ const ServicePage = () => {
 
   return (
       <>
+      <h1>
+        Our Services
+      </h1>
       <div className={styles.flex}>
           <div className={styles.container}>
             <div className={styles.info}>

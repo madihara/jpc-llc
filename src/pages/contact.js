@@ -8,7 +8,7 @@ const ContactPage = () => {
   return (
     <>
     <NavBar/>
-      <SEO title='contact'/>
+      <SEO title='Contact'/>
       <ContactForm />  
     </>
   )

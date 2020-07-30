@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Fade} from 'react-reveal'
 import sewingmachine from '../../images/Sewing-Machine-PNG-File.png'
 
 
@@ -8,7 +9,8 @@ import * as palette from '../../variables/Variables'
 const About = (props) => {
   return (
     <AboutContainer>
-      <TextBox>
+      <Fade up>
+        <TextBox>
         <Title>
           Best in class commercial sewing and innovative solutions for your textile needs.
         </Title>
@@ -19,6 +21,7 @@ const About = (props) => {
         If you have any fabric production needs, we are here to help! We pride ourselves in our long history of providing our customers with top of the line products and services. Quality and consistency are our highest priorities and we strive to ensure client satisfaction with short lead times.
         </Paragraph>
       </TextBox>
+      </Fade>
       <ImageBox>
         <Image src={sewingmachine} alt="sewing maching" />
       </ImageBox>
@@ -44,8 +47,8 @@ const Image = styled.img`
 `
 
 const TextBox= styled.div`
-  width: 60%;
-  padding: 0 2rem 0 6rem;
+  width: 80%;
+  padding: 0 0 0 6rem;
  
 `
 const Title = styled.h3`

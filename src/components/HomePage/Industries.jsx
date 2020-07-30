@@ -3,11 +3,13 @@ import styled from 'styled-components'
 import {FaCarSide} from 'react-icons/fa'
 import {IoIosAirplane, IoMdBoat} from 'react-icons/io'
 import {RiTruckLine} from 'react-icons/ri'
+import {Fade} from 'react-reveal'
 import * as palette from '../../variables/Variables'
 
 function Industries() {
   return (
     <IndustryBox>
+      <Fade up>
       <Heading>Industries we serve</Heading>
       <Box>
       <Container>
@@ -39,6 +41,7 @@ function Industries() {
         <Title>Transportation</Title>
       </Container>
       </Box>
+      </Fade>
     </IndustryBox>
   )
 }
@@ -56,7 +59,7 @@ const Heading = styled.h3`
   font-weight: normal;
   font-size: 1.8rem;
   text-transform: uppercase;
-  margin-top: 4rem;
+  margin-top: 7rem;
 `
 
 const Box = styled.section`
