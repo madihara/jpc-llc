@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 import {graphql, useStaticQuery} from 'gatsby'
+import {Fade} from 'react-reveal'
 
-import styles from './services.module.css'
+import * as palette from '../../variables/Variables'
 
 const ServicesPage = () => {
   
@@ -41,10 +42,12 @@ const ServicesPage = () => {
           if (index % 2 === 0){
             return(
               <Row>
-                <div>
+                <Fade left>
+                <div style={{padding: '2rem'}}>
                   <SubHeading>{edge.node.title}</SubHeading>
                   <Text>{edge.node.description.description}</Text>
                 </div>
+                </Fade>
                 <Image src={edge.node.icon.fluid.src}/>
               </Row>
             )
@@ -52,7 +55,12 @@ const ServicesPage = () => {
             return(
               <Row>
                 <Image src={edge.node.icon.fluid.src}/>
-                <div>{edge.node.title}</div>
+                <Fade right>
+                <div style={{padding: '2rem'}}>
+                  <SubHeading style={{textAlign:'right'}}>{edge.node.title}</SubHeading>
+                  <Text style={{textAlign: 'right'}}>{edge.node.description.description}</Text>
+                </div>
+                </Fade>
               </Row>
             )
           }
@@ -73,23 +81,37 @@ const Container = styled.div`
 `
 const Row= styled.section`
   display: flex;
-  justify-content: space-around;
-  margin: 3rem 0;
+  justify-content: space-between;
+  margin: 3rem auto;
+  width: 80vw;
 `
 const SubHeading = styled.h3`
-  font-weight: normal;
+  font-weight: 800;
   text-transform: uppercase;
   padding: 0;
   margin: 0;
+  font-size: 2.3rem;
+  position: relative;
+
+
+  &:before {
+    content:"";
+    display: block;
+    width: 120px;
+    height: 4px;
+    position: absolute;
+    background: ${palette.SECONDARY_COLOR};
+    top: -15px;
+  }
 `
 const Text= styled.p`
   padding: 0;
   margin: 0;
+  font-family: sans-serif;
 `
 const Image = styled.img`
-  width: 35%;
-  height: 50vh;
-
+  width: 45%;
+  height: 60vh;
 `
 
 export default ServicesPage

@@ -1,12 +1,34 @@
 import React from 'react'
-import {Link} from 'gatsby'
+import {Link, graphql, useStaticQuery} from 'gatsby'
 import styled from 'styled-components'
+import {AiOutlinePhone, AiOutlineMail} from 'react-icons/ai'
+
 
 import logo from '../../images/icons/jpc-logocir.png'
 
 import * as palette from '../../variables/Variables'
 
 const Footer = () => {
+
+  const data = useStaticQuery(graphql`
+  query{
+site{
+  siteMetadata{
+    title
+    author
+    business{
+      name
+      streetAddress
+      cityAddress
+      phone
+      email
+    }
+  }
+}
+}
+`)
+
+const { name, streetAddress, cityAddress, phone, email } = data.site.siteMetadata.business
 
   return (
     <Foot>
@@ -29,8 +51,14 @@ const Footer = () => {
           <Title>
             Contact Us
           </Title>
-          <p>574-555-555</p>
-          <p>jpc@gmail.com</p>
+          <Flex>
+            <AiOutlinePhone style={{fontSize: '1.2rem'}}/>
+            &nbsp;&nbsp;{phone}
+          </Flex>
+          <Flex>
+            <AiOutlineMail style={{fontSize: '1.2rem'}}/>
+            &nbsp;&nbsp;{email}
+          </Flex>
         </Column>
         <Column>
           <Title>Location</Title>
@@ -91,6 +119,13 @@ const Logo = styled.img`
   width: 130px;
   padding: 3rem 0;
   margin-left: -2rem;
+`
+const Flex = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 0.8rem;
+  padding: 7px 0;
 `
 
 const Copyright= styled.div`

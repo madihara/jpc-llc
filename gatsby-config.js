@@ -11,8 +11,8 @@ module.exports = {
       name: 'JPC,LLC',
       streetAddress: '2926 Paul Dr.',
       cityAddress: 'Elkhart, IN 99999',
-      phone: '777777777',
-      email: 'jpc@gmail.com'
+      phone: '+1(574)293-8030',
+      email: 'jpccustom@gmail.com'
     }
   },
   plugins: [
