@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import Layout from "../components/layout/layout"
+import NavBar from '../components/layout/NavBar'
+import Footer from '../components/layout/Footer'
 import SEO from "../components/layout/seo"
 import About from '../components/HomePage/About'
 import styled from 'styled-components'
@@ -13,7 +14,8 @@ import Industries from "../components/HomePage/Industries"
 import * as palette from '../variables/Variables'
 
 const IndexPage = ({data}) => (
-  <Layout>
+  <>
+  <NavBar/>
     <SEO title="Home" />
    
     <Hero>
@@ -40,7 +42,8 @@ const IndexPage = ({data}) => (
     <About />
     <CADInfo />
     <Industries />
-  </Layout>
+  <Footer/>
+  </>
 )
 
 export default IndexPage

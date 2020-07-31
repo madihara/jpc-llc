@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import {FaCarSide} from 'react-icons/fa'
-import {IoIosAirplane, IoMdBoat} from 'react-icons/io'
+import {FaCarSide, FaMotorcycle, FaSnowplow} from 'react-icons/fa'
+import {IoIosAirplane, IoMdBoat, IoIosSchool} from 'react-icons/io'
 import {RiTruckLine} from 'react-icons/ri'
+import {GiSpeedBoat, GiWeightLiftingUp, GiBarracksTent} from 'react-icons/gi'
 import {Fade} from 'react-reveal'
 import * as palette from '../../variables/Variables'
 
@@ -15,30 +16,72 @@ function Industries() {
       <Container>
         <FaCarSide 
         style={{
-          fontSize: '100px'
+          fontSize: '50px'
         }}/>
         <Title>Automotive</Title>
       </Container>
       <Container>
         <IoIosAirplane 
         style={{
-          fontSize: '100px'
+          fontSize: '50px'
         }}/>
         <Title>Airline</Title>
       </Container>
       <Container>
         <IoMdBoat 
         style={{
-          fontSize: '100px'
+          fontSize: '50px'
         }}/>
-        <Title>Marine</Title>
+        <Title>Marine and Boating</Title>
       </Container>
       <Container>
         <RiTruckLine
         style={{
-          fontSize: '100px'
+          fontSize: '50px'
         }} />
-        <Title>Transportation</Title>
+        <Title>Trucking and RV</Title>
+      </Container>
+      <Container>
+        <FaMotorcycle
+        style={{
+          fontSize: '50px'
+        }} />
+        <Title>Motorcycle</Title>
+      </Container>
+      <Container>
+        <GiSpeedBoat
+        style={{
+          fontSize: '50px'
+        }} />
+        <Title>Personal Watercraft</Title>
+      </Container>
+      <Container>
+        <IoIosSchool
+        style={{
+          fontSize: '50px'
+        }} />
+        <Title>Education</Title>
+      </Container>
+      <Container>
+        <GiBarracksTent
+        style={{
+          fontSize: '50px'
+        }} />
+        <Title>Custom Enclosures</Title>
+      </Container>
+      <Container>
+        <FaSnowplow
+        style={{
+          fontSize: '50px'
+        }} />
+        <Title>Industrial Equipment</Title>
+      </Container>
+      <Container>
+        <GiWeightLiftingUp
+        style={{
+          fontSize: '50px'
+        }} />
+        <Title>Sporting Gear</Title>
       </Container>
       </Box>
       </Fade>
@@ -53,6 +96,7 @@ const IndustryBox = styled.div`
   align-items: center;
   text-align: center;
   margin-bottom: 4rem;
+  padding: 0 6rem;
 `
 
 const Heading = styled.h3`
@@ -65,6 +109,7 @@ const Heading = styled.h3`
 const Box = styled.section`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
   width: 100%;

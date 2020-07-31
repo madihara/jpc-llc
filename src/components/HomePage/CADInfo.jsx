@@ -165,6 +165,8 @@ const Left = styled.button`
   font-size: 40px;
   border: none;
   background: transparent;
+  outline: none;
+  cursor: pointer;
 
   &:hover{
     transform: scale(1.1);
@@ -181,6 +183,8 @@ const Right = styled.button`
   color: white;
   border: none;
   background: transparent;
+  outline: none;
+  cursor: pointer;
 
   &:hover{
     transform: scale(1.1);

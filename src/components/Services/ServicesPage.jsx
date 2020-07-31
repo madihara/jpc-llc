@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import BackgroundImage from 'gatsby-background-image'
 import {graphql, useStaticQuery} from 'gatsby'
 import {Fade} from 'react-reveal'
-
+import LazyHero from 'react-lazy-hero'
 import * as palette from '../../variables/Variables'
+
+import heroimg from './images/herojpc2.jpg'
 
 const ServicesPage = () => {
   
@@ -18,25 +19,36 @@ const ServicesPage = () => {
               description{
                 description
               }
+              information{
+                information
+              } 
               icon{
-                id
-                description
                 fluid{
                   src
                 }
               }
-                }
-              }
             }
           }
+        }
+      }
     `
     )
     
   
   
   return (
-    <>
+    <div>
+    <StyledLazyHero 
+      imageSrc={heroimg}
+      opacity="0.8"
+      color="#0a1128"
+      parallaxOffset="1"
+      minHeight="45vh"
+      isCentered={true}>
     <Heading>Our Services</Heading>
+    </StyledLazyHero>
+   
+    
     <Container>
         {data.allContentfulFeatureCard.edges.map((edge, index) => {
           if (index % 2 === 0){
@@ -46,6 +58,7 @@ const ServicesPage = () => {
                 <div style={{padding: '2rem'}}>
                   <SubHeading>{edge.node.title}</SubHeading>
                   <Text>{edge.node.description.description}</Text>
+                  <Text>{edge.node.information.information}</Text>
                 </div>
                 </Fade>
                 <Image src={edge.node.icon.fluid.src}/>
@@ -66,13 +79,17 @@ const ServicesPage = () => {
           }
         })}
     </Container>
-    </>
+    </div>
   )
 }
 
+const StyledLazyHero = styled(LazyHero)`
+  position: relative;
+`
 const Heading = styled.h1`
   font-weight: normal;
   text-align: center;
+  color: white;
 `
 
 const Container = styled.div`

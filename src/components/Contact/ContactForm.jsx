@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import { graphql, useStaticQuery } from "gatsby"
 import {AiFillPhone, AiOutlineMail,} from 'react-icons/ai'
 import {FaMapMarkerAlt} from 'react-icons/fa'
+import LazyHero from 'react-lazy-hero'
+import styled from 'styled-components'
 
 
 import styles from './contact.module.css'
@@ -29,6 +31,15 @@ const ContactForm = () => {
 
   return (
     <>
+    <StyledLazyHero 
+      imageSrc={heroimg}
+      opacity="0.8"
+      color="#0a1128"
+      parallaxOffset="1"
+      minHeight="45vh"
+      isCentered={true}>
+    <Heading>Our Services</Heading>
+    </StyledLazyHero>
       <section className={styles.container}>
         <div className={styles.box1}>
           <h2 className={styles.title}>Send us a message</h2>
@@ -110,5 +121,9 @@ const ContactForm = () => {
     </>
   )
 }
+
+const StyledLazyHero = styled(LazyHero)`
+
+`
 
 export default ContactForm

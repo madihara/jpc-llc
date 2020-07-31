@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 
+import * as palette from '../../variables/Variables'
+
 
 const CapabilitesPage = () => {
 
-  const arr = [
+  const capabilities = [
     'double lock stitching',
     'single lock stitching',
     'grommets',
@@ -13,13 +15,21 @@ const CapabilitesPage = () => {
     'double axis cutting table'
   ]
 
-  const [active, setActive] =useState(arr[0])
+  const equipment = [
+    'sewing machines',
+    'large machine',
+    'embroidering thing',
+    'laser cutter'
+  ]
+
+  const [active, setActive] =useState(capabilities[0])
+  const [equips, setEquip] = useState(equipment[0])
   return (
    <>
     <Title>Manufacturing Capabilities</Title>
     <Container>
       <Column>
-      {arr.map((item,index) => {
+      {capabilities.map((item,index) => {
         return(
             <Tab 
               key={item}
@@ -31,6 +41,24 @@ const CapabilitesPage = () => {
       <Column>
         <Info>
           <Heading> {active}</Heading>
+        </Info>
+      </Column>
+    </Container>
+    <Title>Available Equipment</Title>
+    <Container style={{flexDirection: 'row-reverse'}}>
+      <Column>
+      {equipment.map((item,index) => {
+        return(
+            <Tab 
+              key={item}
+              equips={equips === item}
+              onClick={() => setEquip(item)}>{item}</Tab>
+        )
+      })}
+      </Column>
+      <Column>
+        <Info>
+          <Heading style={{textAlign: 'left'}}> {equips}</Heading>
         </Info>
       </Column>
     </Container>
@@ -59,16 +87,27 @@ const Tab = styled.button`
   border-left: none;
   border-right: none;
   border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
   text-transform: capitalize;
+  background: ${palette.MAIN_COLOR};
+  color: white;
+  transition: .7s;
+  outline: none;
 
 
   ${({ active }) =>
     active &&
     `
-    background; red;
+    background: ${palette.SECONDARY_COLOR};
     opacity: 1;
   `}
+  ${({equips}) =>
+    equips &&
+    `
+    background: ${palette.SECONDARY_COLOR};
+    `
+}  
+    
 `
 const Info = styled.section`
   padding: 0 4rem;

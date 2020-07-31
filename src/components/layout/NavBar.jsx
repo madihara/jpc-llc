@@ -128,25 +128,21 @@ const PhoneBox = styled.div`
   justify-content: center;
   align-items: center;
   padding-bottom: 1.3rem;
-  padding-right: 3rem;
+  
 `
 const PhoneButton = styled.div`
   border-radius: 0;
   background: ${palette.SECONDARY_COLOR};
   color: white;
   border: none;
-  padding: 13px 2rem;
+  padding: 13px 3rem 13px 3.5rem;
   font-size: 1rem;
   margin-top: 1rem;
   transition: 0.3s;
-  /* position: absolute; */
-  /* right: 0; */
 
-
-  :hover{
-    box-shadow: 1px 1px 10px #ececec;
-    cursor: pointer;
-  }
+  width: 130%;
+  -webkit-clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);
 `
 
 export default NavBar
