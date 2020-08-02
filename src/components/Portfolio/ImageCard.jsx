@@ -1,33 +1,71 @@
-import React, { useState } from "react"
+import React from 'react'
+import styled from 'styled-components'
+import BackgroundImage from 'gatsby-background-image'
+import {graphql, useStaticQuery} from 'gatsby'
 
-import "./image-card.scss"
+const ImageCard = () => {
 
-
-const ImageCard = ({ title, features, imageUrl, size }) => {
-  const [isOpen, setInfo] = useState(false)
-
-  const toggleInfo = () => {
-    setInfo(isOpen => !isOpen)
-  }
+  const data = useStaticQuery(
+    graphql`
+      query{
+        allContentfulGalleryItem{
+          edges{
+            node{
+              id
+              name
+              image{
+                fluid
+                  {
+                    ...GatsbyContentfulFluid
+                  }
+              }
+            }
+          }
+        }
+      }
+    `
+  )
 
   return (
-    <div className={`${size} menu-item`}>
-      <div
-        className="background-image"
-        style={{
-          backgroundImage: `url(${imageUrl})`,
-        }}
-      > </div>
-      <div className="content" onClick={toggleInfo}>
-        <h1 className="title">{title.toUpperCase()}</h1>
-        <span className={isOpen ? "hidden" : "subtitle"}>Learn More</span>
-        <span onClick={toggleInfo} className={isOpen ? "subtitle" : "hidden"}>
-          Coming Soon!
-        </span>
-      </div>
-    </div>
-
+    <Gallery>
+      {data.allContentfulGalleryItem.edges.map((edge, item) => {
+        return(
+          <ImageContainer>
+          <StyledBackgroundImage fluid={edge.node.image.fluid}>
+            <h1>{edge.node.name}</h1>
+          </StyledBackgroundImage>
+          
+          </ImageContainer>
+        )
+      })}
+    </Gallery>
   )
 }
+const Gallery = styled.div`
+  display: flex;
+  flex-direction: row;
+`
 
-export default ImageCard
+const ImageContainer = styled.div`
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+   */
+  height: 300px;
+  width: 600px;
+`
+
+const StyledBackgroundImage = styled(BackgroundImage)`
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover{
+    transform: scale(.9);
+    transition: transform 2s cubic-bezier(0.25, 0.45, 0.25, 0.95);
+  }
+`
+
+export default ImageCard;

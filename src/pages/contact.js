@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBar from '../components/layout/NavBar'
+import SimpleNav from '../components/layout/SimpleNav'
 import SEO from '../components/layout/seo'
 
 import ContactForm from '../components/Contact/ContactForm'
@@ -7,7 +7,7 @@ import ContactForm from '../components/Contact/ContactForm'
 const ContactPage = () => {
   return (
     <>
-    <NavBar/>
+    <SimpleNav/>
       <SEO title='Contact'/>
       <ContactForm />  
     </>

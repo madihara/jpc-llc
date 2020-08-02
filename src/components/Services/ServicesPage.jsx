@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {graphql, useStaticQuery} from 'gatsby'
 import {Fade} from 'react-reveal'
-import LazyHero from 'react-lazy-hero'
+import SharedHero from '../SharedComponents/SharedHero'
 import * as palette from '../../variables/Variables'
 
 import heroimg from './images/herojpc2.jpg'
@@ -38,15 +38,7 @@ const ServicesPage = () => {
   
   return (
     <div>
-    <StyledLazyHero 
-      imageSrc={heroimg}
-      opacity="0.8"
-      color="#0a1128"
-      parallaxOffset="1"
-      minHeight="45vh"
-      isCentered={true}>
-    <Heading>Our Services</Heading>
-    </StyledLazyHero>
+    <SharedHero heading='Our Services' image={heroimg} />
    
     
     <Container>
@@ -82,15 +74,6 @@ const ServicesPage = () => {
     </div>
   )
 }
-
-const StyledLazyHero = styled(LazyHero)`
-  position: relative;
-`
-const Heading = styled.h1`
-  font-weight: normal;
-  text-align: center;
-  color: white;
-`
 
 const Container = styled.div`
   display: flex;

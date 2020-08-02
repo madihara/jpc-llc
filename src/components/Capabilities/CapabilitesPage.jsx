@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
+import SharedHero from '../SharedComponents/SharedHero'
+
+import heroimg from '../Services/images/herojpc2.jpg'
 
 import * as palette from '../../variables/Variables'
 
@@ -26,7 +29,7 @@ const CapabilitesPage = () => {
   const [equips, setEquip] = useState(equipment[0])
   return (
    <>
-    <Title>Manufacturing Capabilities</Title>
+    <SharedHero heading='Manufacturing Capabilities' image={heroimg} />
     <Container>
       <Column>
       {capabilities.map((item,index) => {
@@ -68,6 +71,7 @@ const CapabilitesPage = () => {
 
 const Title= styled.h1`
   text-align: center;
+  color: white;
 `
 
 const Container = styled.div`
