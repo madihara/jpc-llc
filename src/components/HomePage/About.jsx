@@ -9,7 +9,7 @@ import * as palette from '../../variables/Variables'
 const About = (props) => {
   return (
     <AboutContainer>
-      <Fade right>
+      <Fade left>
         <TextBox>
         <Title>
           Best in class commercial sewing and innovative solutions for your textile needs.
@@ -32,12 +32,11 @@ const About = (props) => {
 const AboutContainer = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 4rem 0;
+  margin: 4rem 0 0;
 `
 
 const ImageBox = styled.div`
   width: 55%;
-  /* background: ${palette.MAIN_COLOR}; */
 `
 
 const Image = styled.img`

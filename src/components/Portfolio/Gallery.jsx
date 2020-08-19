@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 import {graphql, useStaticQuery} from 'gatsby'
-import HeaderLarge from '../SharedComponents/HeaderLarge'
 
 const ImageCard = () => {
 
@@ -29,16 +28,11 @@ const ImageCard = () => {
 
   return (
     <>
-    {/* <HeaderLarge
-    word1='our recent'
-    word2='projects'
-    info=' Take a look at some of our recent projects and capabilities.'
-    /> */}
     <Hero>
       <HeroTitle>Recent Projects</HeroTitle>
     </Hero>
     <Gallery>
-      {data.allContentfulGalleryItem.edges.reverse().map((edge, item) => {
+      {data.allContentfulGalleryItem.edges.map((edge, item) => {
         return(
           
           <ImageContainer>
@@ -87,6 +81,7 @@ const HeroTitle= styled.h3`
 
 const Gallery = styled.div`
   display: flex;
+  flex-direction: row-reverse;
   flex-flow: wrap;
   justify-content: stretch;
   height: 100%;

@@ -48,22 +48,26 @@ const DetailBox = ({props}) => {
 }
 const Section = styled.div`
   display: flex;
-  flex-direction: row;
   flex-basis: 25%;
   min-width: 300px;
   justify-content: center;
   padding: 0 6rem 2rem;
   margin: 2rem 0 0;
+  flex-flow: wrap;
 `
 
 const Box = styled.div`
   /* border: 3px solid #ececec; */
   background: #ececec;
   margin: 4rem 2rem 0;
-  min-width: 200px;
+  min-width: 300px;
+  max-width: 300px;
   transition: .7s;
   position: relative;
   padding: 8px 8px 20px;
+  flex-grow: 1;
+
+  
   
   /*filter: grayscale(100%);*/
 
@@ -79,12 +83,6 @@ const Icon = styled.div`
   left: 40%;
 `
 
-const Image = styled.img`
-  height: 160px;
-  width: 100%;
-  
-  object-fit: cover;
-`
 
 
 const Title = styled.h3`

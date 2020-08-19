@@ -1,8 +1,6 @@
 import React from 'react'
 import HeaderLarge from '../SharedComponents/HeaderLarge'
 
-import heroimg from '../Services/images/herojpc2.jpg'
-
 const About = () => {
 
   const info='JPC started business in 1984 servicing the van conversion industry in Elkhart, IN.  Starting as a small family run business, JPCLorem ipsum dolor sit amet, consectetur adipiscing elit. '

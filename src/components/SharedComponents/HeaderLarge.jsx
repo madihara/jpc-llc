@@ -28,10 +28,8 @@ const Container = styled.div`
   justify-content: stretch;
   width: 100%;
 `
-const Header = styled.div`
-  display: flex;
-  flex-direction: row;
-`
+
+
 const TitleBox= styled.div`
   display: flex;
   background: ${palette.SECONDARY_COLOR};
@@ -50,6 +48,9 @@ const Title= styled.h2`
   padding-left: 100px;
   line-height: 5rem;
   font-weight: 600;
+  position: relative;
+
+
 `
 
 const TextContainer=styled.div`
@@ -62,6 +63,18 @@ const TextContainer=styled.div`
 
 const TextBox=styled.section`
   margin: 3rem 10rem;
+  position: relative;
+
+  &:before{
+    content:"";
+    display: block;
+    width: 120px;
+    height: 4px;
+    position: absolute;
+    background: ${palette.SECONDARY_COLOR};
+    top: -30px;
+    right: 10px;
+  }
 `
 
 

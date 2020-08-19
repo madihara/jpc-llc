@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import logo from '../../images/icons/jpc-logocir.png'
 
-import {FaPhone, FaTools} from 'react-icons/fa'
+import { FaTools,FaPhone} from 'react-icons/fa'
 import { MdPermMedia} from 'react-icons/md'
 import {GiFactory} from 'react-icons/gi'
 import {AiOutlineHome, AiOutlineInfoCircle} from 'react-icons/ai'
@@ -16,6 +16,7 @@ const NavBar = () => {
 
 
   return (
+    <>
     <Nav>
       <LogoBox>
         <Logo src={logo} alt="JPC logo"/>
@@ -56,19 +57,22 @@ const NavBar = () => {
           <StyledLink to='/contact/'>
             <FaPhone 
             style={{
-            fontSize: '30px'}}/>
+            fontSize: '24px'}}/>
             <h5>Contact</h5></StyledLink>
       </Links>
       <PhoneBox to='/contact'>
         Free Quote
       </PhoneBox>
     </Nav>
-    
+    </>
   )
 }
 
+
+
 const Nav = styled.nav`
   display: flex;
+  align-items: center;
   flex-direction: row;
   justify-content: space-between;
   text-transform: uppercase;
@@ -115,34 +119,25 @@ const StyledLink = styled(Link)`
     font-weight: 300;
   }
 `
-const Column = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
 
-  :hover{
-    color: ${palette.SECONDARY_COLOR};
-  }
-`
 const PhoneBox = styled(Link)`
   display: flex;
-  height: 100%;
-  background: ${palette.SECONDARY_COLOR};
+  height: 50%;
   color: white;
-  border: none;
+  background: ${palette.SECONDARY_COLOR};
   font-size: 1rem;
-  width: 300px;
+  width: 200px;
   align-items: center;
   justify-content: center;
   text-transform: capitalize;
   text-decoration: none;
+  margin: 0 4rem 0 0;
 
   &:hover{
-    background: ${palette.MAIN_COLOR};
+    background: white;
     cursor: pointer;
     transition: 0.7s;
+    color: ${palette.MAIN_COLOR};
   }
   
 `

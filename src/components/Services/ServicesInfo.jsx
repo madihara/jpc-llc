@@ -4,8 +4,6 @@ import {graphql, useStaticQuery} from 'gatsby'
 import {Fade} from 'react-reveal'
 import * as palette from '../../variables/Variables'
 
-import heroimg from './images/herojpc2.jpg'
-
 const ServicesInfo = () => {
   
   const data = useStaticQuery(
@@ -61,10 +59,10 @@ const ServicesInfo = () => {
                 <ColoredBox>
                 <Fade right>
                   <SubHeading style={{
-                    textAlign:'right'
+                    textAlign:'left'
                     }}>{edge.node.title}</SubHeading>
                     </Fade>
-                  <Text style={{textAlign: 'right'}}>{edge.node.description.description}</Text>
+                  <Text style={{textAlign: 'left'}}>{edge.node.description.description}</Text>
                 </ColoredBox>
               </Row>
             )

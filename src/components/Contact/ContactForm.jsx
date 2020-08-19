@@ -1,12 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { graphql, useStaticQuery } from "gatsby"
 import {AiFillPhone, AiOutlineMail,} from 'react-icons/ai'
 import {FaMapMarkerAlt} from 'react-icons/fa'
-import LazyHero from 'react-lazy-hero'
-import styled from 'styled-components'
-import SharedHero from '../SharedComponents/SharedHero'
-
-import heroImg from '../Services/images/herojpc2.jpg'
 
 
 import styles from './contact.module.css'
@@ -30,7 +25,7 @@ const ContactForm = () => {
 }
 `)
 
-  const { name, streetAddress, cityAddress, phone, email } = data.site.siteMetadata.business
+  const { streetAddress, cityAddress, phone, email } = data.site.siteMetadata.business
 
   return (
     <>
@@ -116,8 +111,5 @@ const ContactForm = () => {
   )
 }
 
-const StyledLazyHero = styled(LazyHero)`
-  color: white;
-`
 
 export default ContactForm

@@ -1,8 +1,5 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
-import SharedHero from '../SharedComponents/SharedHero'
-
-import heroimg from '../Services/images/herojpc2.jpg'
 
 import * as palette from '../../variables/Variables'
 
@@ -18,15 +15,15 @@ const CapabilitesPage = () => {
     'double axis cutting table'
   ]
 
-  const equipment = [
-    'sewing machines',
-    'large machine',
-    'embroidering thing',
-    'laser cutter'
-  ]
+  // const equipment = [
+  //   'sewing machines',
+  //   'large machine',
+  //   'embroidering thing',
+  //   'laser cutter'
+  // ]
 
   const [active, setActive] =useState(capabilities[0])
-  const [equips, setEquip] = useState(equipment[0])
+  // const [equips, setEquip] = useState(equipment[0])
 
   return (
    <>
@@ -46,6 +43,16 @@ const CapabilitesPage = () => {
       <Column>
         <Info>
           <Heading> {active}</Heading>
+          <p>This is some text that will explain what each thing does or is.</p>
+          <p>Maybe there will be lists</p>
+          <ul>
+            
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+            <li>four</li>
+          </ul>
+          <p>Equipment? Fabrics? Machinery? Anything you want people to know you have.  Anything potential customers might search for. Pictures included if wanted</p>
         </Info>
       </Column>
     </Container>
@@ -139,6 +146,17 @@ const Heading = styled.h5`
   padding: 0;
   margin: 0;
   font-size: 1.8rem;
+  position: relative;
+
+  &:after{
+    content:'';
+    display: block;
+    position: absolute;
+    background: ${palette.SECONDARY_COLOR};
+    width: 125px;
+    height: 4px;
+    bottom: --20px;
+  }
 `
 
 export default CapabilitesPage

@@ -2,7 +2,6 @@ import React from "react"
 import './styles.css'
 import Footer from './Footer'
 import NavBar from '../Navbar/HomeNav'
-import HomeNav from '../Navbar/HomeNav'
 
 
 
