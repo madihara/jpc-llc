@@ -1,8 +1,9 @@
 import React from "react"
 import './styles.css'
 import Footer from './Footer'
-import NavBar from './NavBar'
-import SimpleNav from './SimpleNav'
+import NavBar from '../Navbar/HomeNav'
+import HomeNav from '../Navbar/HomeNav'
+
 
 
 
@@ -11,7 +12,7 @@ const Layout = ({ children}) => {
 
       return (
         <>
-          <SimpleNav/>
+          <NavBar />
             <main>{children}</main>
           <Footer/>
         </>

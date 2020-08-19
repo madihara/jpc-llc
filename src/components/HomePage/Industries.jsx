@@ -96,11 +96,11 @@ const IndustryBox = styled.div`
   align-items: center;
   text-align: center;
   margin-bottom: 4rem;
-  padding: 0 6rem;
+  padding: 0 8rem;
 `
 
 const Heading = styled.h3`
-  font-weight: normal;
+  /* font-weight: normal; */
   font-size: 1.8rem;
   text-transform: uppercase;
   margin-top: 7rem;

@@ -9,7 +9,7 @@ import * as palette from '../../variables/Variables'
 const About = (props) => {
   return (
     <AboutContainer>
-      <Fade up>
+      <Fade right>
         <TextBox>
         <Title>
           Best in class commercial sewing and innovative solutions for your textile needs.

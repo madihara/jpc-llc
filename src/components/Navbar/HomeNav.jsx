@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import logo from '../../images/icons/jpc-logocir.png'
@@ -11,7 +11,10 @@ import {AiOutlineHome, AiOutlineInfoCircle} from 'react-icons/ai'
 
 import * as palette from '../../variables/Variables'
 
+
 const NavBar = () => {
+
+
   return (
     <Nav>
       <LogoBox>
@@ -21,31 +24,31 @@ const NavBar = () => {
           <StyledLink to='/'>
             <AiOutlineHome 
               style={{ 
-              fontSize: '30px'}}/>
+              fontSize: '24px'}}/>
             <h5>Home</h5>
           </StyledLink>
           <StyledLink to='/services/'>
             <FaTools 
             style={{ 
-            fontSize: '30px'}}/>
+            fontSize: '24px'}}/>
             <h5>Services</h5>
           </StyledLink>
           <StyledLink to='/capabilities/'>
             <GiFactory 
             style={{ 
-            fontSize: '30px'}}/>
+            fontSize: '24px'}}/>
             <h5>Capabilities</h5>
           </StyledLink>
           <StyledLink to='/portfolio/'>
             <MdPermMedia 
             style={{ 
-            fontSize: '30px'}}/>
+            fontSize: '24px'}}/>
             <h5>Portfolio</h5>
            </StyledLink>
            <StyledLink to='/aboutus/'>
              <AiOutlineInfoCircle
               style={{
-                fontSize:'30px',
+                fontSize:'24px',
                 
               }}/>
              <h5>About Us</h5>
@@ -56,8 +59,8 @@ const NavBar = () => {
             fontSize: '30px'}}/>
             <h5>Contact</h5></StyledLink>
       </Links>
-      <PhoneBox>
-        <PhoneButton>+1(574)293-8030</PhoneButton>
+      <PhoneBox to='/contact'>
+        Free Quote
       </PhoneBox>
     </Nav>
     
@@ -69,7 +72,7 @@ const Nav = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   text-transform: uppercase;
-  height: 125px;
+  height: 115px;
   width: 100vw;
   background: ${palette.MAIN_COLOR}
 `
@@ -78,12 +81,12 @@ const LogoBox = styled.div`
   justify-content: center;
   align-items: center;
   width: 200px;
-  height: 130px;
+  padding-left: 30px;
 
 `
 const Logo = styled.img`
-  height: 80px;
-  width: 110px;
+  height: 75px;
+  width: 90px;
 `
 
 const Links = styled.div`
@@ -123,26 +126,25 @@ const Column = styled.div`
     color: ${palette.SECONDARY_COLOR};
   }
 `
-const PhoneBox = styled.div`
+const PhoneBox = styled(Link)`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 1.3rem;
-  
-`
-const PhoneButton = styled.div`
-  border-radius: 0;
+  height: 100%;
   background: ${palette.SECONDARY_COLOR};
   color: white;
   border: none;
-  padding: 13px 3rem 13px 3.5rem;
   font-size: 1rem;
-  margin-top: 1rem;
-  transition: 0.3s;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  text-decoration: none;
 
-  width: 130%;
-  -webkit-clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);
-  clip-path: polygon(13% 0, 100% 0, 100% 100%, 0% 100%);
+  &:hover{
+    background: ${palette.MAIN_COLOR};
+    cursor: pointer;
+    transition: 0.7s;
+  }
+  
 `
 
 export default NavBar

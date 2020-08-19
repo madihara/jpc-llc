@@ -1,18 +1,34 @@
 import React from 'react'
 import styled from 'styled-components'
+import { graphql, useStaticQuery} from 'gatsby'
+import Img from 'gatsby-image'
 import {IoIosArrowDropleft, IoIosArrowDropright, IoIosArrowRoundForward} from 'react-icons/io'
 import {Fade} from 'react-reveal'
+import {Link} from 'gatsby'
 
 import * as palette from '../../variables/Variables'
 
 import image1 from './images/image.jpg'
-import cover from './images/cover.jpg'
-import jetski from './images/jetski.jpg'
-import tent from './images/tent.jpg'
 
 const CadInfo = () => {
-  let arr = [cover, jetski, tent]
 
+  const data = useStaticQuery(
+    graphql`
+      query{
+        allContentfulGalleryItem{
+          edges{
+            node{
+              image{
+                fluid{
+                  ...GatsbyContentfulFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  )
 
 
   return (
@@ -24,21 +40,21 @@ const CadInfo = () => {
       <TextBox>
       <Heading>
         Some of our Quality work
-      </Heading>
+      </Heading> 
       <SubHeading>
         Here are a few of the products we can produce in small quantities or large-volume orders. One more sentence to see how the layout looks with a little more text.
       </SubHeading>
-      <Button>
-        SEE FULL GALLERY  &nbsp;
+      <ButtonLink to='/portfolio'>
+        Full Gallery  &nbsp;
         <IoIosArrowRoundForward style={{fontSize: '20px'}}/>
-      </Button>
+      </ButtonLink>
       </TextBox>
       </Fade>
       <ScrollBox>
-        {arr.map((item, index) => {
+        {data.allContentfulGalleryItem.edges.reverse().filter((data, index) => index < 5 ).map((edge, index) => {
           return(
             <Slide key={index}>
-              <SlideImg src={item} alt={item} />
+              <SlideImg fluid={edge.node.image.fluid} />
             </Slide>
           )
         })}
@@ -73,10 +89,12 @@ const TextBox = styled.div`
 `
 const ImageBox= styled.div`
   width: 40vw;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 `
 const Image = styled.img`
-  height: 450px;
+  height: 600px;
+  width: 700px;
+  object-fit: cover;
   /* filter: grayscale(100%); */
 
 `
@@ -110,19 +128,20 @@ const SubHeading = styled.p`
   font-family: sans-serif;
   font-size:1.1rem;
 `
-const Button = styled.button`
+const ButtonLink = styled(Link)`
   margin-left: auto;
   background: ${palette.SECONDARY_COLOR};
   border: none;
   padding: 10px 25px;
-  border-radius: 5px;
+  border-radius: 2px;
   color: white;
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-top: 10px;
   transition: 0.7s;
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-decoration: none;
 
   &:hover {
     color: ${palette.MAIN_COLOR};
@@ -136,7 +155,7 @@ const ScrollBox = styled.div`
   color: white;
   position: absolute;
   left: 15%;
-  top: 60%;
+  top: 70%;
   /* background: red; */
   display: flex;
   flex-direction: row;
@@ -149,10 +168,10 @@ const Slide = styled.div`
   margin: 0 50px 0 0;
   border: 1px solid white;
 `
-const SlideImg = styled.img`
-  width: 300;
+const SlideImg = styled(Img)`
+  width: 300px;
   height: 200px;
-  cover: stretch;
+  object-fit: contain;
 `
 
 const Left = styled.button`

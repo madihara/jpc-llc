@@ -27,9 +27,11 @@ const CapabilitesPage = () => {
 
   const [active, setActive] =useState(capabilities[0])
   const [equips, setEquip] = useState(equipment[0])
+
   return (
    <>
-    <SharedHero heading='Manufacturing Capabilities' image={heroimg} />
+   <Hero><Title>Manufacturing Capabilities</Title>
+  </Hero>
     <Container>
       <Column>
       {capabilities.map((item,index) => {
@@ -47,8 +49,7 @@ const CapabilitesPage = () => {
         </Info>
       </Column>
     </Container>
-    <Title>Available Equipment</Title>
-    <Container style={{flexDirection: 'row-reverse'}}>
+    {/* <Container style={{flexDirection: 'row-reverse'}}>
       <Column>
       {equipment.map((item,index) => {
         return(
@@ -64,20 +65,36 @@ const CapabilitesPage = () => {
           <Heading style={{textAlign: 'left'}}> {equips}</Heading>
         </Info>
       </Column>
-    </Container>
+    </Container> */}
     </>
   )
 }
 
-const Title= styled.h1`
-  text-align: center;
+const Hero = styled.div`
   color: white;
+  opacity:0.8;
+  background: #0a1128;
+  text-align: center;
+  height: 200px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
+const Title= styled.h3`
+  text-align: center;
+  font-weight: normal;
+  font-size: 3rem;
+  padding: 0;
+  margin: 0;
 `
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 3rem;
+  padding: 3rem 10rem;
 `
 
 const Column = styled.div`

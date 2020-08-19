@@ -34,10 +34,9 @@ const ContactForm = () => {
 
   return (
     <>
-    <SharedHero heading='Contact Us' image={heroImg} />
       <section className={styles.container}>
         <div className={styles.box1}>
-          <h2 className={styles.title}>Send us a message</h2>
+          <h2 className={styles.title}>Send us a message.</h2>
           <form
             className={styles.form}
             action="mailto:madisonharadine@gmail.com"

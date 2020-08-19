@@ -2,12 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import {graphql, useStaticQuery} from 'gatsby'
 import {Fade} from 'react-reveal'
-import SharedHero from '../SharedComponents/SharedHero'
 import * as palette from '../../variables/Variables'
 
 import heroimg from './images/herojpc2.jpg'
 
-const ServicesPage = () => {
+const ServicesInfo = () => {
   
   const data = useStaticQuery(
     graphql`
@@ -38,7 +37,6 @@ const ServicesPage = () => {
   
   return (
     <div>
-    <SharedHero heading='Our Services' image={heroimg} />
    
     
     <Container>
@@ -46,13 +44,12 @@ const ServicesPage = () => {
           if (index % 2 === 0){
             return(
               <Row>
+                <ColoredBox>
                 <Fade left>
-                <div style={{padding: '2rem'}}>
                   <SubHeading>{edge.node.title}</SubHeading>
+                  </Fade>
                   <Text>{edge.node.description.description}</Text>
-                  <Text>{edge.node.information.information}</Text>
-                </div>
-                </Fade>
+                </ColoredBox>
                 <Image src={edge.node.icon.fluid.src}/>
               </Row>
             )
@@ -60,12 +57,15 @@ const ServicesPage = () => {
             return(
               <Row>
                 <Image src={edge.node.icon.fluid.src}/>
+               
+                <ColoredBox>
                 <Fade right>
-                <div style={{padding: '2rem'}}>
-                  <SubHeading style={{textAlign:'right'}}>{edge.node.title}</SubHeading>
+                  <SubHeading style={{
+                    textAlign:'right'
+                    }}>{edge.node.title}</SubHeading>
+                    </Fade>
                   <Text style={{textAlign: 'right'}}>{edge.node.description.description}</Text>
-                </div>
-                </Fade>
+                </ColoredBox>
               </Row>
             )
           }
@@ -77,19 +77,20 @@ const ServicesPage = () => {
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 `
 const Row= styled.section`
   display: flex;
   justify-content: space-between;
-  margin: 3rem auto;
-  width: 80vw;
+  margin: 1rem 6rem;
+  /* background: red; */
+`
+const ColoredBox=styled.div`
+  padding: 3rem;
 `
 const SubHeading = styled.h3`
   font-weight: 800;
   text-transform: uppercase;
-  padding: 0;
-  margin: 0;
   font-size: 2.3rem;
   position: relative;
 
@@ -105,8 +106,6 @@ const SubHeading = styled.h3`
   }
 `
 const Text= styled.p`
-  padding: 0;
-  margin: 0;
   font-family: sans-serif;
 `
 const Image = styled.img`
@@ -114,4 +113,4 @@ const Image = styled.img`
   height: 60vh;
 `
 
-export default ServicesPage
+export default ServicesInfo

@@ -1,7 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import NavBar from '../components/layout/NavBar'
-import Footer from '../components/layout/Footer'
 import SEO from "../components/layout/seo"
 import About from '../components/HomePage/About'
 import styled from 'styled-components'
@@ -10,12 +8,14 @@ import {graphql} from 'gatsby'
 import DetailBox from '../components/HomePage/DetailBox'
 import CADInfo from '../components/HomePage/CADInfo'
 import Industries from "../components/HomePage/Industries"
+import Layout from '../components/layout/layout'
+import {Zoom} from 'react-reveal'
 
 import * as palette from '../variables/Variables'
 
 const IndexPage = ({data}) => (
   <>
-  <NavBar/>
+  <Layout>
     <SEO title="Home" />
    
     <Hero>
@@ -25,7 +25,7 @@ const IndexPage = ({data}) => (
       >
         <Container>
           <Box>
-            <Title>WE SPECIALIZE IN COMMERCIAL SEWING.</Title>
+            <Zoom><Title>WE SPECIALIZE IN COMMERCIAL SEWING.</Title>
             <SubTitle>
             At JPC we have been manufacturing quality industrial textiles since 1984. From large commercial production to custom projects, we have the experience to make your next project a success.
             </SubTitle>
@@ -34,15 +34,16 @@ const IndexPage = ({data}) => (
                 Contact Us &rarr;
               </ContactButton>
             </Link>
+            </Zoom>
           </Box>
         </Container>
       </StyledImage>
-      <DetailBox />
+      {/* <DetailBox /> */}
     </Hero>
+    <DetailBox />
     <About />
-    <CADInfo />
     <Industries />
-  <Footer/>
+    </Layout>
   </>
 )
 
@@ -61,7 +62,7 @@ export const pageQuery = graphql`
 `;
 
 const Hero = styled.div`
-position: relative;
+  position: relative;
   display: flex;
   flex-flow: row-wrap;
   height: 100%;
@@ -72,12 +73,14 @@ position: relative;
 `
 
 const StyledImage = styled(BackgroundImage)`
-  height: 109vh;
-  width: 75%;
+  height: 85vh;
+  width: 100%;
+  /* width: 75%; */
 `
 const Container = styled.div`
   
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -93,7 +96,7 @@ const Box= styled.section`
 const Title = styled.h1`
   text-transform: uppercase;
   color: white;
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height: 3.5rem;
   font-weight: 800;
 `
@@ -101,9 +104,10 @@ const Title = styled.h1`
 const SubTitle=styled.h3`
   color: white;
   font-weight: 400;
+  font-size: 1rem;
 `
 const ContactButton = styled.button`
-  border-radius: 50px;
+  border-radius: 10px;
   border: none;
   background: ${palette.SECONDARY_COLOR};
   color: white;

@@ -28,7 +28,7 @@ site{
 }
 `)
 
-const { name, streetAddress, cityAddress, phone, email } = data.site.siteMetadata.business
+const { phone, email } = data.site.siteMetadata.business
 
   return (
     <Foot>
@@ -63,7 +63,7 @@ const { name, streetAddress, cityAddress, phone, email } = data.site.siteMetadat
         <Column>
           <Title>Location</Title>
           <div>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2977.5882062293126!2d-86.020427!3d41.729404!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8816db791c9f05c7%3A0xae904854f4f3fc25!2sJPC%20LLC!5e0!3m2!1sen!2sus!4v1595958396512!5m2!1sen!2sus" width="500" height="350" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2977.5882062293126!2d-86.020427!3d41.729404!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8816db791c9f05c7%3A0xae904854f4f3fc25!2sJPC%20LLC!5e0!3m2!1sen!2sus!4v1595958396512!5m2!1sen!2sus" width="500" height="350" frameborder="0" allowfullscreen="" aria-hidden="false" title="jpc-map"></iframe>
           </div>
         </Column>
       </Main>

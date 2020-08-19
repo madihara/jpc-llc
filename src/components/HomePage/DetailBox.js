@@ -1,11 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
-import {StaticQuery, graphql} from 'gatsby'
+import {Link} from 'gatsby'
 
-import image1 from '../../images/grommets.jpg'
-import image2 from '../../images/buckles.jpg'
-import image3 from '../../images/velcro2.jpg'
+import {FiTruck, FiScissors, FiMonitor} from 'react-icons/fi'
+
 
 import * as palette from '../../variables/Variables'
 
@@ -14,45 +12,71 @@ const DetailBox = ({props}) => {
   return (
    <Section>
     <Box>
-      <Image src={image1} alt="" />
-      <Title>3d CAD Technology</Title>
-      <LearnMore>Learn More &#62;</LearnMore>
+      <Icon>
+      <FiMonitor
+      style={{ 
+        fontSize: '80px',
+        color: `${palette.SECONDARY_COLOR}`}}/></Icon>
+      {/* <Image src={image1} alt="" /> */}
+     <Title>3d CAD Technology</Title>
+      <Info>Maecenas ac vestibulum est. Quisque ultricies sit amet eros eget porta. Ut ultricies at quam a efficitur. Sed blandit orci sit amet lorem porttitor, id feugiat turpis mollis. Proin maximus pellentesque nisl, sit amet facilisis ligula malesuada sed. Donec et augue eleifend nibh luctus euismod.</Info>
+      <LearnMore to='/services'>Learn More &#62;</LearnMore>
     </Box>
     <Box>
-      <Image src={image2} alt="" />
-      <Title>Commercial Sewing</Title>
-      <LearnMore>Learn More &#62;</LearnMore>
+      <Icon><FiTruck
+      style={{ 
+        fontSize: '80px',
+        color: `${palette.SECONDARY_COLOR}`}}/></Icon>
+      {/* <Image src={image2} alt="" /> */}
+     <Title>Commercial Sewing</Title>
+      <Info>Maecenas ac vestibulum est. Quisque ultricies sit amet eros eget porta. Ut ultricies at quam a efficitur. Sed blandit orci sit amet lorem porttitor, id feugiat turpis mollis. Proin maximus pellentesque nisl, sit amet facilisis ligula malesuada sed. Donec et augue eleifend nibh luctus euismod.</Info>
+      <LearnMore to='/services'>Learn More &#62;</LearnMore>
     </Box>
     <Box>
-     <Image src={image3} alt="" />
-      <Title>Custom Projects</Title>
-      <LearnMore>Learn More &#62;</LearnMore>
+      <Icon>
+      <FiScissors
+      style={{ 
+        fontSize: '80px',
+        color: `${palette.SECONDARY_COLOR}`}}/></Icon>
+     {/* <Image src={image3} alt="" /> */}
+     <Title>Custom Projects</Title>
+      <Info>Maecenas ac vestibulum est. Quisque ultricies sit amet eros eget porta. Ut ultricies at quam a efficitur. Sed blandit orci sit amet lorem porttitor, id feugiat turpis mollis. Proin maximus pellentesque nisl, sit amet facilisis ligula malesuada sed. Donec et augue eleifend nibh luctus euismod.</Info>
+      <LearnMore to='/services'>Learn More &#62;</LearnMore>
     </Box>
 </Section>
   )
 }
 const Section = styled.div`
-  width: 25%;
-  height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-basis: 25%;
   min-width: 300px;
+  justify-content: center;
+  padding: 0 6rem 2rem;
+  margin: 2rem 0 0;
 `
 
 const Box = styled.div`
-  border: 3px solid #ececec};
-  margin: 1rem;
-  width: 87%;
+  /* border: 3px solid #ececec; */
+  background: #ececec;
+  margin: 4rem 2rem 0;
   min-width: 200px;
   transition: .7s;
+  position: relative;
+  padding: 8px 8px 20px;
+  
   /*filter: grayscale(100%);*/
 
-  :hover{
+  /* :hover{
     color: ${palette.SECONDARY_COLOR};
     border: 3px solid ${palette.SECONDARY_COLOR};
     opacity: 70%;
-  }
+  } */
+`
+const Icon = styled.div`
+  position: absolute;
+  top: -44px;
+  left: 40%;
 `
 
 const Image = styled.img`
@@ -62,22 +86,38 @@ const Image = styled.img`
   object-fit: cover;
 `
 
+
 const Title = styled.h3`
   font-weight: 600;
-  margin: 10px 0 0;
+  margin: 45px 0 0;
   text-transform: uppercase;
   font-size: 1.5rem;
   padding-left: 15px;
+  text-align: center;
 `
 
-const LearnMore = styled.h5`
+const Info = styled.p`
+  color: black;
+  padding: 0 15px;
+`
+
+const LearnMore = styled(Link)`
   font-weight: 600;
   margin: 0 0 6px;
   text-transform: uppercase;
-  padding-left: 15px;
+  margin-left: 15px;
   color: ${palette.SECONDARY_COLOR};
   font-size: 0.8rem;
   letter-spacing: 1.5px;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+ 
+
+  &:hover{
+    cursor: pointer;
+    border-bottom: 1px solid ${palette.MAIN_COLOR};
+    transition: all ease-in-out 0.7s;
+  }
 `
 
 

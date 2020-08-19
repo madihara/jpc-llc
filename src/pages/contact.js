@@ -1,16 +1,15 @@
 import React from 'react'
-import SimpleNav from '../components/layout/SimpleNav'
+import Layout from '../components/layout/layout'
 import SEO from '../components/layout/seo'
 
 import ContactForm from '../components/Contact/ContactForm'
 
 const ContactPage = () => {
   return (
-    <>
-    <SimpleNav/>
+    <Layout>
       <SEO title='Contact'/>
       <ContactForm />  
-    </>
+    </Layout>
   )
 }
 
