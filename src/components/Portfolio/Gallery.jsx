@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 import {graphql, useStaticQuery} from 'gatsby'
+import * as palette from '../../variables/Variables'
 
 const ImageCard = () => {
 
@@ -26,27 +27,43 @@ const ImageCard = () => {
     `
   )
 
+  const [isOpen, setIsOpen] = useState('')
+
+
   return (
     <>
     <Hero>
       <HeroTitle>Recent Projects</HeroTitle>
     </Hero>
     <Gallery>
-      {data.allContentfulGalleryItem.edges.map((edge, item) => {
+      {data.allContentfulGalleryItem.edges.map((edge) => {
         return(
-          
-          <ImageContainer>
-          <StyledBackgroundImage fluid={edge.node.image.fluid}>
-            <TitleBox>
-              <Title>{edge.node.name}</Title>
+          <ImageContainer
+          key={edge.node.name}
+          active={isOpen === edge.node.name}
+          onClick={() => (isOpen === edge.node.name) ? setIsOpen('') : setIsOpen(edge.node.name)}
+          >
+            <StyledBackgroundImage fluid={edge.node.image.fluid}>
+              <TitleBox 
+              key={edge.node.name}>
+                <Title>{edge.node.name}</Title>
                 <SubTitle>Learn More</SubTitle>
-            </TitleBox>
-          </StyledBackgroundImage>
-          
+              </TitleBox>
+              <OverlayContainer active={isOpen === edge.node.name}>
+                <InfoText>
+                  <TitleSmall>{edge.node.name}</TitleSmall>
+                  <p>Short description phrase or sentence?</p>
+                  <ul>
+                    <li>details</li>
+                    <li>more details</li>
+                    <li>3</li>
+                    <li>4</li>
+                  </ul>
+                </InfoText>
+              </OverlayContainer>
+            </StyledBackgroundImage>
           </ImageContainer>
-         
-        )
-      })}
+      )})}
     </Gallery>
     <InformationContainer>
       <Text>
@@ -61,14 +78,16 @@ const Hero = styled.div`
   color: white;
   opacity:0.8;
   background: #0a1128;
+
   text-align: center;
-  height: 200px;
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 3rem;
+  height: 275px;
+  padding-top: 115px;
 `
 
 const HeroTitle= styled.h3`
@@ -109,11 +128,11 @@ const StyledBackgroundImage = styled(BackgroundImage)`
   justify-content: center;
   align-items: center;
   opacity: 0.6;
-
+/* 
   &:hover{
     transform: scale(1.1);
     transition: transform 2s cubic-bezier(0.25, 0.45, 0.25, 0.95);
-  }
+  } */
 `
 const TitleBox = styled.div`
   background: white;
@@ -127,6 +146,15 @@ const TitleBox = styled.div`
   padding: 0 25px;
   opacity: 0.7;
   font-weight: bold;
+
+
+  &:hover{
+    transform: scale(1.1);
+    transition: transform 2s cubic-bezier(0.25, 0.45, 0.25, 0.95);
+    cursor: pointer;
+  }
+
+  
 `
 const Title= styled.h3`
   padding: 0;
@@ -150,10 +178,41 @@ const InformationContainer = styled.div`
 const Text = styled.p`
   padding: 0;
   margin: 0;
-  /* text-transform: uppercase; */
   font-size: 1.1rem;
   text-align: center;
+`
+const InfoText = styled.div`
+  color: white;
+  padding: 3rem;
+`
 
+const OverlayContainer = styled.div`
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: ${palette.MAIN_COLOR};
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+  color: white;
+  cursor: pointer;
+
+
+  ${({ active }) =>
+    active &&
+    `
+    bottom: 0;
+    height: 100%;
+  `}
+`
+
+const TitleSmall = styled.h5`
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  text-align: center;
 `
 
 export default ImageCard;

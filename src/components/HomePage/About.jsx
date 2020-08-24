@@ -33,10 +33,19 @@ const AboutContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin: 4rem 0 0;
+  overflow-x: hidden;
 `
 
 const ImageBox = styled.div`
   width: 55%;
+
+  @media screen and (max-width: 1160px) {
+    width: 35%;
+  }
+
+  @media screen and (max-width: 950px){
+    display: none;
+  }
 `
 
 const Image = styled.img`
@@ -48,6 +57,11 @@ const Image = styled.img`
 const TextBox= styled.div`
   width: 80%;
   padding: 0 0 0 6rem;
+
+  @media screen and (max-width: 767px) {
+    width: 85%;
+    padding: 0 2rem;
+  }
  
 `
 const Title = styled.h3`

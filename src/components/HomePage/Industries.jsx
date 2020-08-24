@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import {FaCarSide, FaMotorcycle, FaSnowplow} from 'react-icons/fa'
+import {FaCarSide, FaBuilding, FaMotorcycle, FaSnowplow} from 'react-icons/fa'
 import {IoIosAirplane, IoMdBoat, IoIosSchool} from 'react-icons/io'
 import {RiTruckLine} from 'react-icons/ri'
 import {GiSpeedBoat, GiWeightLiftingUp, GiBarracksTent} from 'react-icons/gi'
 import {Fade} from 'react-reveal'
+
 import * as palette from '../../variables/Variables'
 
 function Industries() {
@@ -81,7 +82,14 @@ function Industries() {
         style={{
           fontSize: '50px'
         }} />
-        <Title>Sporting Gear</Title>
+        <Title>Sporting Equipment</Title>
+      </Container>
+      <Container>
+        <FaBuilding
+        style={{
+          fontSize: '50px'
+        }} />
+        <Title>Hospitality</Title>
       </Container>
       </Box>
       </Fade>
@@ -97,6 +105,10 @@ const IndustryBox = styled.div`
   text-align: center;
   margin-bottom: 4rem;
   padding: 0 8rem;
+
+  @media screen and (max-width: 870px){
+    padding: 0 1rem;
+  }
 `
 
 const Heading = styled.h3`
@@ -119,7 +131,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 3rem;
+  margin: 1rem 2rem;
   justify-content:center;
   align-items: center;
 `

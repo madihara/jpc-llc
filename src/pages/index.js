@@ -13,13 +13,7 @@ import {Zoom} from 'react-reveal'
 import * as palette from '../variables/Variables'
 
 const IndexPage = ({data}) => (
-  <>
-  {/* <ContactHeader>
-    <ContactText>
-      <AiFillPhone style={{}}/>  &nbsp;&nbsp;+1 (574) 888-8888 &nbsp;&nbsp;&nbsp;&nbsp;
-      <AiOutlineMail />   &nbsp;&nbsp;jpccustom@gmail.com
-    </ContactText>
-  </ContactHeader> */}
+  <div>
   <Layout>
     <SEO title="Home" />
    
@@ -32,7 +26,7 @@ const IndexPage = ({data}) => (
           <Box>
             <Zoom><Title>WE SPECIALIZE IN COMMERCIAL SEWING.</Title>
             <SubTitle>
-            From large commercial production to custom projects, we have the experience to make your next project a success.
+            From large commercial production to custom projects, we  <br/>have the experience to make your next project a success.
             </SubTitle>
             <Link to='/contact'>
               <ContactButton>
@@ -48,7 +42,7 @@ const IndexPage = ({data}) => (
     <About />
     <Industries />
     </Layout>
-  </>
+  </div>
 )
 
 export default IndexPage
@@ -84,15 +78,13 @@ const Hero = styled.div`
   position: relative;
   display: flex;
   flex-flow: row-wrap;
-  height: 100%;
   justify-content: stretch;
   align-items: stretch;
 `
 
 const StyledImage = styled(BackgroundImage)`
-  height: 80vh;
+  height: 92vh;
   width: 100%;
-  /* width: 75%; */
 `
 const Container = styled.div`
   
@@ -100,14 +92,24 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-start;
 `
 const Box= styled.section`
   width: 45vw;
   margin-top: 6rem;
   padding: 3rem;
-  background: rgba(0,0,0,0.6);
+  /* background: rgba(255,255,255,0.2); */
+
+  @media screen and (max-width: 1094px){
+    width: 60vw;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 85vw;
+    padding: 1rem;
+    margin: 1rem;
+  }
 `
 
 const Title = styled.h1`
@@ -117,7 +119,12 @@ const Title = styled.h1`
   line-height: 3.5rem;
   font-weight: 800;
   margin: 0;
-  padding: 1rem 1rem 0;
+  padding: 0 1rem 0;
+
+  @media screen and (max-width: 780px) {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
 `
 
 const SubTitle=styled.h3`
@@ -126,16 +133,21 @@ const SubTitle=styled.h3`
   font-size: 1rem;
   padding: 1rem;
   margin: 0;
+
+  @media screen and (max-width: 760px) {
+    font-size: 0.8rem;
+  }
 `
 const ContactButton = styled.button`
   border: none;
   background: ${palette.SECONDARY_COLOR};
   color: white;
-  padding: 1.3rem;
+  padding: 1.3rem ;
   font-size: 0.9rem;
   text-transform: uppercase;
   font-weight: 600;
   transition: 0.4s;
+  margin: 1rem 1rem 2.6rem;
 
   :hover{
     background:white;

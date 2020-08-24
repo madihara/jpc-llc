@@ -15,15 +15,8 @@ const CapabilitesPage = () => {
     'double axis cutting table'
   ]
 
-  // const equipment = [
-  //   'sewing machines',
-  //   'large machine',
-  //   'embroidering thing',
-  //   'laser cutter'
-  // ]
-
   const [active, setActive] =useState(capabilities[0])
-  // const [equips, setEquip] = useState(equipment[0])
+  console.log(active)
 
   return (
    <>
@@ -52,7 +45,7 @@ const CapabilitesPage = () => {
             <li>three</li>
             <li>four</li>
           </ul>
-          <p>Equipment? Fabrics? Machinery? Anything you want people to know you have.  Anything potential customers might search for. Pictures included if wanted</p>
+          <p>Equipment? Fabrics? Machinery? Anything you want people to know you have.  Anything potential customers might search for. Pictures included if wanted. </p>
         </Info>
       </Column>
     </Container>
@@ -82,7 +75,8 @@ const Hero = styled.div`
   opacity:0.8;
   background: #0a1128;
   text-align: center;
-  height: 200px;
+  height: 275px;
+  padding-top: 115px;
   text-transform: uppercase;
   display: flex;
   flex-direction: column;

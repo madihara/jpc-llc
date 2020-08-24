@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import {graphql, useStaticQuery} from 'gatsby'
 import {Fade} from 'react-reveal'
 import * as palette from '../../variables/Variables'
@@ -44,7 +44,7 @@ const ServicesInfo = () => {
               <Row>
                 <ColoredBox>
                 <Fade left>
-                  <SubHeading>{edge.node.title}</SubHeading>
+                  <SubHeading className="left">{edge.node.title}</SubHeading>
                   </Fade>
                   <Text>{edge.node.description.description}</Text>
                 </ColoredBox>
@@ -58,11 +58,11 @@ const ServicesInfo = () => {
                
                 <ColoredBox>
                 <Fade right>
-                  <SubHeading style={{
-                    textAlign:'left'
+                  <SubHeading className="left" style={{
+                    textAlign:'right'
                     }}>{edge.node.title}</SubHeading>
                     </Fade>
-                  <Text style={{textAlign: 'left'}}>{edge.node.description.description}</Text>
+                  <Text style={{textAlign: 'right'}}>{edge.node.description.description}</Text>
                 </ColoredBox>
               </Row>
             )
@@ -73,24 +73,35 @@ const ServicesInfo = () => {
   )
 }
 
+css`
+  .left{
+
+  }
+
+  .right{
+    
+  }
+`
+
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 `
 const Row= styled.section`
   display: flex;
-  justify-content: space-between;
-  margin: 1rem 6rem;
+  justify-content: center;
+  margin: 4rem 6rem;
   /* background: red; */
 `
 const ColoredBox=styled.div`
-  padding: 3rem;
 `
 const SubHeading = styled.h3`
   font-weight: 800;
   text-transform: uppercase;
   font-size: 2.3rem;
   position: relative;
+  padding: 0 3rem;
+  
 
 
   &:before {
@@ -105,10 +116,13 @@ const SubHeading = styled.h3`
 `
 const Text= styled.p`
   font-family: sans-serif;
+  padding: 0 3rem;
 `
 const Image = styled.img`
   width: 45%;
-  height: 60vh;
+  height: 50vh;
+  filter: grayscale(100);
+  object-fit: fill;
 `
 
 export default ServicesInfo

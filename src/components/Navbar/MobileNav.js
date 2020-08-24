@@ -1,24 +1,23 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 const MobileNav = () => {
-  const[open, setOpen] =useState(false)
-
   return (
-    <Burger open={open} onClick={() => setOpen(!open)}>
-      Mobile Nav
-    </Burger>
+    <MobileNavigation>
+      I am the mobile nav
+    </MobileNavigation>
   )
 }
 
-const Burger = styled.div`
+const MobileNavigation = styled.div`
   background: red;
-  height: 300px;
-  display: none;
-
-  @media screen and (max-width: 800px) {
-    display: block;
-  }
+  color: white;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
 `
 
 export default MobileNav
+

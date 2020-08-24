@@ -1,52 +1,82 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import logo from '../../images/icons/jpc-logocir.png'
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 import { FaTools,FaPhone} from 'react-icons/fa'
 import { MdPermMedia} from 'react-icons/md'
 import {GiFactory} from 'react-icons/gi'
 import {AiOutlineHome, AiOutlineInfoCircle} from 'react-icons/ai'
 
-
+import logo from '../../images/icons/jpc-logocir.png'
 import * as palette from '../../variables/Variables'
 
 
 const NavBar = () => {
+  const [hideOnScroll, setHideOnScroll] = useState(true)
+
+  useScrollPosition(({ prevPos, currPos, wait }) => {
+    const isShow = currPos.y > prevPos.y
+    if (isShow !== hideOnScroll) setHideOnScroll(isShow)
+  }, [hideOnScroll],
+      false,
+      false,
+      300
+  )
 
 
   return (
     <>
-    <Nav>
+    <Nav show={hideOnScroll}>
       <LogoBox>
         <Logo src={logo} alt="JPC logo"/>
       </LogoBox>
       <Links>
-          <StyledLink to='/'>
-            <AiOutlineHome 
+          <StyledLink 
+          // active={active == 'home'}
+          // onClick={() => setActive('home')}
+          to='/'
+          >
+            <AiOutlineHome
               style={{ 
               fontSize: '24px'}}/>
-            <h5>Home</h5>
+            <LinkTitle>Home</LinkTitle>
           </StyledLink>
-          <StyledLink to='/services/'>
+          <StyledLink 
+          // active={active == 'services'}
+          // onClick={() => setActive('services')}
+          to='/services/'
+          >
             <FaTools 
             style={{ 
             fontSize: '24px'}}/>
             <h5>Services</h5>
           </StyledLink>
-          <StyledLink to='/capabilities/'>
+          <StyledLink 
+          // active={active === 'capabilities'}
+          // onClick={() => setActive('capabilities')}
+          to='/capabilities/'
+          >
             <GiFactory 
             style={{ 
             fontSize: '24px'}}/>
             <h5>Capabilities</h5>
           </StyledLink>
-          <StyledLink to='/portfolio/'>
+          <StyledLink 
+          // active={active === 'portfolio'}
+          // onClick={() => setActive('home')}
+          to='/portfolio/'
+          >
             <MdPermMedia 
             style={{ 
             fontSize: '24px'}}/>
             <h5>Portfolio</h5>
            </StyledLink>
-           <StyledLink to='/aboutus/'>
+           <StyledLink 
+          //  active={active === 'about'}
+          //  onClick={() => setActive('about')}
+           to='/aboutus/'
+           >
              <AiOutlineInfoCircle
               style={{
                 fontSize:'24px',
@@ -78,7 +108,20 @@ const Nav = styled.nav`
   text-transform: uppercase;
   height: 115px;
   width: 100vw;
-  background: ${palette.MAIN_COLOR}
+  background: ${palette.MAIN_COLOR};
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+
+  visibility: ${props => (props.show ? 'visible' : 'hidden')};
+  transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
+  transform: ${props => (props.show ? 'none' : 'translate(0, -100%)')};
+
+  @media screen and (max-width: 730px) {
+    display: none;
+  }
 `
 const LogoBox = styled.div`
   display: flex;
@@ -92,12 +135,17 @@ const Logo = styled.img`
   height: 75px;
   width: 90px;
 `
+const LinkTitle= styled.h5`
+
+`
 
 const Links = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+
 `
 
 const StyledLink = styled(Link)`
@@ -110,13 +158,17 @@ const StyledLink = styled(Link)`
   justify-content: center;
   align-items: center;
   transition: .7s;
-
+  
   :hover{
     color: ${palette.SECONDARY_COLOR};
   }
 
   h5{
     font-weight: 300;
+  }
+
+  @media screen and (max-width: 900px) {
+    margin: 15px 0.8rem -5px;
   }
 `
 
@@ -138,6 +190,11 @@ const PhoneBox = styled(Link)`
     cursor: pointer;
     transition: 0.7s;
     color: ${palette.MAIN_COLOR};
+  }
+
+  @media screen and (max-width: 900px) {
+    display: none;
+    color: red;
   }
   
 `

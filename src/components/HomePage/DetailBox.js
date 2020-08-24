@@ -48,34 +48,26 @@ const DetailBox = ({props}) => {
 }
 const Section = styled.div`
   display: flex;
-  flex-basis: 25%;
   min-width: 300px;
   justify-content: center;
-  padding: 0 6rem 2rem;
+  padding: 3rem 4rem 2rem;
   margin: 2rem 0 0;
   flex-flow: wrap;
+
+  @media screen and (max-width: 590px){
+    padding: 3rem 1rem;
+  }
 `
 
 const Box = styled.div`
-  /* border: 3px solid #ececec; */
   background: #ececec;
-  margin: 4rem 2rem 0;
-  min-width: 300px;
-  max-width: 300px;
+  margin: 3rem 2rem 0;
+  width: 300px;
   transition: .7s;
   position: relative;
   padding: 8px 8px 20px;
   flex-grow: 1;
-
-  
-  
-  /*filter: grayscale(100%);*/
-
-  /* :hover{
-    color: ${palette.SECONDARY_COLOR};
-    border: 3px solid ${palette.SECONDARY_COLOR};
-    opacity: 70%;
-  } */
+  flex-shrink: 1;
 `
 const Icon = styled.div`
   position: absolute;
