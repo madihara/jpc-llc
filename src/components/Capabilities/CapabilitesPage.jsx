@@ -1,72 +1,66 @@
 import React, {useState} from 'react'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
+import {graphql, useStaticQuery} from 'gatsby'
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 import * as palette from '../../variables/Variables'
 
 
 const CapabilitesPage = () => {
+  
+  const capabilities = useStaticQuery(
+    graphql`
+      query{
+        allContentfulCapabilitiesTabs{
+          edges{
+            node{
+              name
+              description{
+                json
+              }
+            }
+          }
+        }
+      }   
+    `
+  )
 
-  const capabilities = [
-    'double lock stitching',
-    'single lock stitching',
-    'grommets',
-    'long arm sewing',
-    'bar trackers',
-    'double axis cutting table'
-  ]
-
-  const [active, setActive] =useState(capabilities[0])
-  console.log(active)
+  const [active, setActive] = useState({name:'Fabrics', description:''});
 
   return (
-   <>
-   <Hero><Title>Manufacturing Capabilities</Title>
-  </Hero>
+   <div style={{height: '100%'}}>
+    <Hero>
+      <Title>Manufacturing Capabilities</Title>
+    </Hero>
     <Container>
       <Column>
-      {capabilities.map((item,index) => {
+      {capabilities.allContentfulCapabilitiesTabs.edges.map((edge,index) => {
         return(
+          <div>
             <Tab 
-              key={item}
-              active={active === item}
-              onClick={() => setActive(item)}>{item}</Tab>
+              key={edge.node.name}
+              active={active.name === edge.node.name}
+              onClick={() => setActive({
+                name: `${edge.node.name}`,
+                description: `${documentToReactComponents(edge.node.description.json)}`
+              })}
+             >{edge.node.name}</Tab>
+             <Description
+             active={active.name === edge.node.name}> 
+                {documentToReactComponents(edge.node.description.json)}
+             </Description>
+          </div>
         )
       })}
       </Column>
       <Column>
         <Info>
-          <Heading> {active}</Heading>
-          <p>This is some text that will explain what each thing does or is.</p>
-          <p>Maybe there will be lists</p>
-          <ul>
-            
-            <li>one</li>
-            <li>two</li>
-            <li>three</li>
-            <li>four</li>
-          </ul>
-          <p>Equipment? Fabrics? Machinery? Anything you want people to know you have.  Anything potential customers might search for. Pictures included if wanted. </p>
+          <Heading> {active.name}</Heading>
+       
         </Info>
       </Column>
     </Container>
-    {/* <Container style={{flexDirection: 'row-reverse'}}>
-      <Column>
-      {equipment.map((item,index) => {
-        return(
-            <Tab 
-              key={item}
-              equips={equips === item}
-              onClick={() => setEquip(item)}>{item}</Tab>
-        )
-      })}
-      </Column>
-      <Column>
-        <Info>
-          <Heading style={{textAlign: 'left'}}> {equips}</Heading>
-        </Info>
-      </Column>
-    </Container> */}
-    </>
+    </div>
   )
 }
 
@@ -96,11 +90,13 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   padding: 3rem 10rem;
+  min-height: 200%;
 `
 
 const Column = styled.div`
   display:flex;
   flex-direction: column;
+  height: 100%;
 `
 const Tab = styled.button`
   cursor: pointer;
@@ -128,11 +124,31 @@ const Tab = styled.button`
     `
     background: ${palette.SECONDARY_COLOR};
     `
-}  
-    
+}     
+`
+const Description = styled.div`
+  display:none;
+  
+
+  ${({active}) =>
+    active &&
+    `display: block;
+    position: absolute;
+    left: 475px;
+    top: 478px;
+    padding: 0 8rem 0 0;
+    `
+  }
+
+    @media screen and (max-width: 1076px) {
+      display: block;
+      position: relative;
+    }
+  
 `
 const Info = styled.section`
   padding: 0 4rem;
+  min-height: 630px;
 `
 
 const Heading = styled.h5`
@@ -151,7 +167,12 @@ const Heading = styled.h5`
     height: 4px;
     bottom: --20px;
   }
-`
+
+  @media screen and (max-width: 1076px){
+    display:none;
+  }`
+
+
 
 export default CapabilitesPage
 

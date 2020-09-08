@@ -15,10 +15,10 @@ const About = (props) => {
           Best in class commercial sewing and innovative solutions for your textile needs.
         </Title>
         <Paragraph>
-        Beginning in 1984, JPC started as a small, family run business in Elkhart, Indiana. We manufactured and provided floor mats for the thriving van conversion industry for many years. In time, JPC grew larger and we expanded our resources and expertise to provide sewn textiles to a variety of industries around the world.
+        Beginning in 1984, JPC started as a small, family run business in Elkhart, Indiana. We manufactured and provided floor mats for the thriving van conversion industry for many years. In time, JPC grew larger and we expanded our resources and expertise to provide sewn textiles to a variety of industries around the world. We offer a large selection of equipment and unique materials as well as laser measurements and product prototyping to manufacture efficiently without compromising quality.
         </Paragraph>
         <Paragraph>
-        If you have any fabric production needs, we are here to help! We pride ourselves in our long history of providing our customers with top of the line products and services. Quality and consistency are our highest priorities and we strive to ensure client satisfaction with short lead times.
+        Whether you're a large company looking to source high volume production or simply looking for a one off custom project we are here to help! We pride ourselves in our long history of providing our customers with top of the line products and services. Quality and consistency are our highest priorities and we strive to ensure client satisfaction with short lead times.
         </Paragraph>
       </TextBox>
       </Fade>

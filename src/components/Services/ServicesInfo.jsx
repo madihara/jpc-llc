@@ -2,6 +2,7 @@ import React from 'react'
 import styled, {css} from 'styled-components'
 import {graphql, useStaticQuery} from 'gatsby'
 import {Fade} from 'react-reveal'
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import * as palette from '../../variables/Variables'
 
 const ServicesInfo = () => {
@@ -13,12 +14,9 @@ const ServicesInfo = () => {
           edges {
             node {
               title
-              description{
-                description
-              }
               information{
-                information
-              } 
+                json
+              }
               icon{
                 fluid{
                   src
@@ -46,7 +44,7 @@ const ServicesInfo = () => {
                 <Fade left>
                   <SubHeading className="left">{edge.node.title}</SubHeading>
                   </Fade>
-                  <Text>{edge.node.description.description}</Text>
+                 <Text> {documentToReactComponents(edge.node.information.json)}</Text>
                 </ColoredBox>
                 <Image src={edge.node.icon.fluid.src}/>
               </Row>
@@ -59,29 +57,24 @@ const ServicesInfo = () => {
                 <ColoredBox>
                 <Fade right>
                   <SubHeading className="left" style={{
-                    textAlign:'right'
+                    textAlign:'left'
                     }}>{edge.node.title}</SubHeading>
                     </Fade>
-                  <Text style={{textAlign: 'right'}}>{edge.node.description.description}</Text>
+                  <Text style={{textAlign: 'left'}}>
+                    {documentToReactComponents(edge.node.information.json)}
+                  </Text>
                 </ColoredBox>
               </Row>
             )
           }
         })}
     </Container>
+    
     </div>
   )
 }
 
-css`
-  .left{
 
-  }
-
-  .right{
-    
-  }
-`
 
 const Container = styled.div`
   display: flex;
@@ -115,8 +108,8 @@ const SubHeading = styled.h3`
   }
 `
 const Text= styled.p`
-  font-family: sans-serif;
   padding: 0 3rem;
+  font-size: .9rem;
 `
 const Image = styled.img`
   width: 45%;
@@ -124,5 +117,16 @@ const Image = styled.img`
   filter: grayscale(100);
   object-fit: fill;
 `
+
+// css`
+//   .left{
+//     color: purple;
+//     background: red;
+//   }
+
+//   .right{
+    
+//   }
+// `
 
 export default ServicesInfo

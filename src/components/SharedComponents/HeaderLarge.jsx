@@ -4,7 +4,7 @@ import * as palette from '../../variables/Variables'
 import {Zoom} from 'react-reveal'
 
 
-const HeaderLarge = ({word1, word2, info, info2}) => {
+const HeaderLarge = ({word1, word2, info, info2, src}) => {
   return (
     <>
     <Container>
@@ -14,7 +14,13 @@ const HeaderLarge = ({word1, word2, info, info2}) => {
         </Zoom>
       </TitleBox>
       <TextContainer>
-        <TextBox>{info}<br/> <br/>{info2}</TextBox>
+        {src && ( <Image src={src}/>)}
+        {info && (<TextBox>
+          {info}<br/> <br/>{info2}
+        
+        </TextBox> 
+        )}
+        
       </TextContainer>
     </Container>
     </>
@@ -60,13 +66,16 @@ const TextContainer=styled.div`
   align-items: center;
   font-size: 0.9rem;
   width: 50%;
+  height: 70px;
+  margin-top: 230px;
 `
 
 const TextBox=styled.section`
+  
   margin: 3rem 10rem;
   position: relative;
 
-  &:before{
+   &:before{
     content:"";
     display: block;
     width: 120px;
@@ -76,6 +85,13 @@ const TextBox=styled.section`
     top: -30px;
     right: 10px;
   }
+`
+const Image = styled.img`
+  object-fit: cover;
+  overflow:hidden;
+  height: 70vh;
+  width: 100%;
+  
 `
 
 

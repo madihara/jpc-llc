@@ -34,7 +34,8 @@ const ContactForm = () => {
           <h2 className={styles.title}>Send us a message.</h2>
           <form
             className={styles.form}
-            action="mailto:madisonharadine@gmail.com"
+            method="POST"
+            data-netlify="true"
           >
             <div>
               <input

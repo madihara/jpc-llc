@@ -14,6 +14,7 @@ const ImageCard = () => {
             node{
               id
               name
+              attributes
               image{
                 fluid
                   {
@@ -43,7 +44,7 @@ const ImageCard = () => {
           active={isOpen === edge.node.name}
           onClick={() => (isOpen === edge.node.name) ? setIsOpen('') : setIsOpen(edge.node.name)}
           >
-            <StyledBackgroundImage fluid={edge.node.image.fluid}>
+           {edge.node.image && ( <StyledBackgroundImage fluid={edge.node.image.fluid}> 
               <TitleBox 
               key={edge.node.name}>
                 <Title>{edge.node.name}</Title>
@@ -52,16 +53,17 @@ const ImageCard = () => {
               <OverlayContainer active={isOpen === edge.node.name}>
                 <InfoText>
                   <TitleSmall>{edge.node.name}</TitleSmall>
-                  <p>Short description phrase or sentence?</p>
+                 {edge.node.attributes &&(
                   <ul>
-                    <li>details</li>
-                    <li>more details</li>
-                    <li>3</li>
-                    <li>4</li>
-                  </ul>
+                  {edge.node.attributes.map((attribute) => {
+                      return(
+                      <ListItem>{attribute}</ListItem>
+                      )
+                    })}
+                  </ul>)}
                 </InfoText>
               </OverlayContainer>
-            </StyledBackgroundImage>
+            </StyledBackgroundImage>)}
           </ImageContainer>
       )})}
     </Gallery>
@@ -165,6 +167,9 @@ const SubTitle= styled.h5`
   padding: 0;
   margin: 0;
   font-weight: normal;
+`
+const ListItem = styled.li`
+  text-transform: capitalize;
 `
 
 const InformationContainer = styled.div`

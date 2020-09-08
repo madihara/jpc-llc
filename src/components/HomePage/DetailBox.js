@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Link} from 'gatsby'
+import {Link, graphql, useStaticQuery} from 'gatsby'
 
 import {FiTruck, FiScissors, FiMonitor} from 'react-icons/fi'
 
@@ -9,6 +9,20 @@ import * as palette from '../../variables/Variables'
 
 
 const DetailBox = ({props}) => {
+  const data = useStaticQuery(
+    graphql`
+      query{
+        allContentfulFeatureCard{
+          edges{
+            node{
+              title
+            }
+          }
+        }
+      }
+    `
+  )
+
   return (
    <Section>
     <Box>
@@ -19,7 +33,7 @@ const DetailBox = ({props}) => {
         color: `${palette.SECONDARY_COLOR}`}}/></Icon>
       {/* <Image src={image1} alt="" /> */}
      <Title>3d CAD Technology</Title>
-      <Info>Maecenas ac vestibulum est. Quisque ultricies sit amet eros eget porta. Ut ultricies at quam a efficitur. Sed blandit orci sit amet lorem porttitor, id feugiat turpis mollis. Proin maximus pellentesque nisl, sit amet facilisis ligula malesuada sed. Donec et augue eleifend nibh luctus euismod.</Info>
+      <Info>We have the capability to take precise laser measurements of any projects quickly and effectively.  We use Rhino computer-aided design to prototype and reverse engineer accurate solutions for all of your sewing needs.  Married with MPanel Software we can model 3D and 2D patterns for tension fabric structures created for the marine fabric industry.</Info>
       <LearnMore to='/services'>Learn More &#62;</LearnMore>
     </Box>
     <Box>
@@ -29,7 +43,7 @@ const DetailBox = ({props}) => {
         color: `${palette.SECONDARY_COLOR}`}}/></Icon>
       {/* <Image src={image2} alt="" /> */}
      <Title>Commercial Sewing</Title>
-      <Info>Maecenas ac vestibulum est. Quisque ultricies sit amet eros eget porta. Ut ultricies at quam a efficitur. Sed blandit orci sit amet lorem porttitor, id feugiat turpis mollis. Proin maximus pellentesque nisl, sit amet facilisis ligula malesuada sed. Donec et augue eleifend nibh luctus euismod.</Info>
+      <Info>Over the years our facility has expanded and increased our ability to produce large production quantities with short lead times for our customers.  We have been serving the leading global companies for years and pride ourselves on strong, high quality materials while focusing on quick and consistent production. </Info>
       <LearnMore to='/services'>Learn More &#62;</LearnMore>
     </Box>
     <Box>
@@ -40,7 +54,8 @@ const DetailBox = ({props}) => {
         color: `${palette.SECONDARY_COLOR}`}}/></Icon>
      {/* <Image src={image3} alt="" /> */}
      <Title>Custom Projects</Title>
-      <Info>Maecenas ac vestibulum est. Quisque ultricies sit amet eros eget porta. Ut ultricies at quam a efficitur. Sed blandit orci sit amet lorem porttitor, id feugiat turpis mollis. Proin maximus pellentesque nisl, sit amet facilisis ligula malesuada sed. Donec et augue eleifend nibh luctus euismod.</Info>
+      <Info>Have a project in mind but don't know where to start? Using our laser measurement technology and computer-aided design softwares we can have a product model available quickly.  We do one off designs or can produce larger quantities to fit your needs. </Info>
+      <Info>If you have a project you want to get started, contact us today!</Info>
       <LearnMore to='/services'>Learn More &#62;</LearnMore>
     </Box>
 </Section>
