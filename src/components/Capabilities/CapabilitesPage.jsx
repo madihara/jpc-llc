@@ -34,7 +34,7 @@ const CapabilitesPage = () => {
     </Hero>
     <Container>
       <Column>
-      {capabilities.allContentfulCapabilitiesTabs.edges.map((edge,index) => {
+      {capabilities.allContentfulCapabilitiesTabs.edges.map((edge) => {
         return(
           <div>
             <Tab 
