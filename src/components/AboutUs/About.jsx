@@ -1,5 +1,8 @@
 import React from 'react'
 import HeaderLarge from '../SharedComponents/HeaderLarge'
+import styled from 'styled-components'
+import image from './images/JPC-sign.jpg'
+
 
 const About = () => {
 
@@ -14,11 +17,16 @@ const About = () => {
       info={info}
       info2={info2}
       />
-      <div style={{height: '300px'}}>
-        Picture of outside of the building maybe? and more info on what they do today.
+      <div>
+        <Image src={image} />
       </div>
     </div>
   )
 }
 
+const Image = styled.img`
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+`
 export default About;

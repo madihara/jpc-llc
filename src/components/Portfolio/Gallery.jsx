@@ -178,6 +178,9 @@ const InformationContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 1076px) {
+    padding: 6rem 3rem;
+  }
 `
 
 const Text = styled.p`
@@ -185,6 +188,8 @@ const Text = styled.p`
   margin: 0;
   font-size: 1.1rem;
   text-align: center;
+
+
 `
 const InfoText = styled.div`
   color: white;

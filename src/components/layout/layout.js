@@ -11,10 +11,18 @@ import MobileNav from '../Navbar/MobileNav'
 
 const Layout = ({ children}) => {
 
+  let width = window.innerWidth
+  let navbar;
+  if(width > 1136) {
+    navbar = <NavBar />
+  } else{
+    navbar = <MobileNav />
+  }
+
+
       return (
         <OverflowHidden>
-          {/* <MobileNav /> */}
-          <NavBar />
+          {navbar}
             <main>{children}</main>
           <Footer/>
         </OverflowHidden>
@@ -24,6 +32,7 @@ const Layout = ({ children}) => {
 
 const OverflowHidden=styled.div`
   overflow-x: hidden;
+  height: 100%;
 `
 
 export default Layout

@@ -85,6 +85,10 @@ const Row= styled.section`
   justify-content: center;
   margin: 4rem 6rem;
   /* background: red; */
+
+  @media screen and (max-width: 600px){
+    margin: 1rem 0;
+  }
 `
 const ColoredBox=styled.div`
 `
@@ -94,6 +98,10 @@ const SubHeading = styled.h3`
   font-size: 2.3rem;
   position: relative;
   padding: 0 3rem;
+  
+  @media screen and (max-width: 600px){
+    padding: 0 1rem;
+  }
   
 
 
@@ -110,12 +118,20 @@ const SubHeading = styled.h3`
 const Text= styled.p`
   padding: 0 3rem;
   font-size: .9rem;
+
+  @media screen and (max-width:600px){
+    padding: 0 1rem;
+  }
 `
 const Image = styled.img`
   width: 45%;
   height: 50vh;
   filter: grayscale(100);
   object-fit: fill;
+
+  @media screen and (max-width: 1040px){
+    display: none;
+  }
 `
 
 // css`

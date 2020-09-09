@@ -47,7 +47,7 @@ const { phone, email } = data.site.siteMetadata.business
           <StyledLink to='/contact'>Contact</StyledLink>
           <Logo src={logo} alt="jpc logo" />
         </Column>
-        <Column>
+        <ColumnMiddle>
           <Title>
             Contact Us
           </Title>
@@ -59,13 +59,13 @@ const { phone, email } = data.site.siteMetadata.business
             <AiOutlineMail style={{fontSize: '1.2rem'}}/>
             &nbsp;&nbsp;{email}
           </Flex>
-        </Column>
-        <Column>
+        </ColumnMiddle>
+        <ColumnRight>
           <Title>Location</Title>
           <div>
           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2977.5882062293126!2d-86.020427!3d41.729404!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8816db791c9f05c7%3A0xae904854f4f3fc25!2sJPC%20LLC!5e0!3m2!1sen!2sus!4v1595958396512!5m2!1sen!2sus" width="500" height="350" frameborder="0" allowfullscreen="" aria-hidden="false" title="jpc-map"></iframe>
           </div>
-        </Column>
+        </ColumnRight>
       </Main>
       <Copyright>Copyright &copy; {(new Date().getFullYear())} JPC, LLC &nbsp;&nbsp;|  &nbsp;&nbsp;  Created by Madison Haradine</Copyright>
 
@@ -92,6 +92,10 @@ const Column = styled.section`
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  @media screen and (max-width: 630px){
+    text-align: center;
+  }
 `
 const Title = styled.h1`
   text-transform: uppercase;
@@ -119,6 +123,11 @@ const Logo = styled.img`
   width: 130px;
   padding: 3rem 0;
   margin-left: -2rem;
+
+  @media screen and (max-width: 630px){
+    margin-left: 0;
+    padding: 2rem 0 0;
+  }
 `
 const Flex = styled.div`
   display: flex;
@@ -135,6 +144,16 @@ const Copyright= styled.div`
   text-transform: uppercase;
   font-size: 11px;
   padding: 8px 0 0;
+`
+const ColumnRight = styled(Column)`
+  @media screen and (max-width: 1276px) {
+    display: none;
+  }
+`
+const ColumnMiddle = styled(Column)`
+  @media screen and (max-width: 630px) {
+    display: none;
+  }
 `
 
 export default Footer

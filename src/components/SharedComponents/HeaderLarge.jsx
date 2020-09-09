@@ -30,10 +30,11 @@ const HeaderLarge = ({word1, word2, info, info2, src}) => {
 
 const Container = styled.div`
   display: flex; 
-  flex-flow: row-wrap;
+  flex-flow: wrap;
   justify-content: stretch;
   width: 100%;
-  padding-top: 115px;
+  margin-top: 115px;
+
 `
 
 
@@ -41,13 +42,13 @@ const TitleBox= styled.div`
   display: flex;
   background: ${palette.SECONDARY_COLOR};
   color: white;
-  height: 70vh;
+  min-height: 70vh;
+  max-height: 500px;
   width: 50%;
-  /* justify-content: center; */
   flex-grow: 1;
   align-items: center;
   text-transform: capitalize;
-
+  flex: 1 1 auto;
 `
 
 const Title= styled.h2`
@@ -66,8 +67,9 @@ const TextContainer=styled.div`
   align-items: center;
   font-size: 0.9rem;
   width: 50%;
-  height: 70px;
-  margin-top: 230px;
+  min-height: 70vh; 
+  min-width: 300px;
+
 `
 
 const TextBox=styled.section`
@@ -85,13 +87,18 @@ const TextBox=styled.section`
     top: -30px;
     right: 10px;
   }
+
+  @media screen and (max-width: 1183px) {
+    margin: 3rem 2rem;
+  }
 `
 const Image = styled.img`
   object-fit: cover;
   overflow:hidden;
-  height: 70vh;
-  width: 100%;
-  
+  min-height: 70vh;
+  width: 50%;
+  flex-grow: 1;
+  max-height: 500px;
 `
 
 

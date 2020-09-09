@@ -103,8 +103,8 @@ const IndustryBox = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-bottom: 4rem;
-  padding: 0 8rem;
+  margin-bottom: 8rem;
+  padding: 0 10rem;
 
   @media screen and (max-width: 870px){
     padding: 0 1rem;
