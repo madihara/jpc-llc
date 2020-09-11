@@ -35,6 +35,10 @@ const Container = styled.div`
   width: 100%;
   margin-top: 115px;
 
+  @media screen and (max-width: 935px){
+    margin-top: 0;
+  }
+
 `
 
 
@@ -46,6 +50,7 @@ const TitleBox= styled.div`
   max-height: 500px;
   width: 50%;
   flex-grow: 1;
+  justify-content: center;
   align-items: center;
   text-transform: capitalize;
   flex: 1 1 auto;
@@ -53,11 +58,15 @@ const TitleBox= styled.div`
 
 const Title= styled.h2`
   font-size: 5rem;
-  padding-left: 100px;
+  /* padding-left: 100px; */
   line-height: 5rem;
   font-weight: 600;
   position: relative;
 
+  @media screen and (max-width: 414px) {
+    font-size: 4rem;
+    padding-left: 20px;
+  }
 
 `
 

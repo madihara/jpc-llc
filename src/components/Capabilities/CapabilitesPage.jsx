@@ -111,24 +111,26 @@ const Container = styled.div`
   flex-direction: row;
   padding: 3rem 10rem;
   height: 150vh;
-  /* flex-flow: wrap;
-  flex-direction: row-reverse; */
 
+
+
+  @media screen and (min-width: 1000px) and (max-width: 1076px){
+    padding: 3rem 0;
+    height: 80vh;
+    flex-direction: column;
+  }
 
   @media screen and (max-width: 1076px){
     padding: 3rem 0;
-    justify-content: center;
+    height: 120vh;
     flex-direction: column;
-    align-items: center;
-    align-content: center;
   }
 `
 
 const Column = styled.div`
   display:flex;
   flex-direction: column;
-  height: 100%;
-
+  
 
   @media screen and (max-width: 1076px){
     flex-direction: row;
@@ -177,7 +179,7 @@ const Tab = styled.button`
     margin: 2px;
   }
 
-  @media screen and (max-width: 448px) {
+  @media screen and (max-width: 591px) {
     width: auto;
   }
 `
@@ -214,14 +216,15 @@ const Description = styled.div`
     }
     }
 
-    @media screen and (max-width: 378px) {
+    @media screen and (max-width: 768px) {
       ${({active}) => 
       active &&
       `display: block;
         position: absolute;
-        top: 660px;
-        left: 30px;
+        top: 700px;
+        left: 10px;
         overflow: scroll;
+        width: 95vw;
         `
     }
     }
@@ -259,7 +262,11 @@ const Image = styled.img`
   margin: 2px;
 
   @media screen and (max-width: 1076px){
-    display: none
+    max-height: 300px;
+  }
+
+  @media screen and (max-width: 414px) {
+    display: none;
   }
 `
 

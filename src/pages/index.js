@@ -80,11 +80,18 @@ const Hero = styled.div`
   flex-flow: row-wrap;
   justify-content: stretch;
   align-items: stretch;
+
+
 `
 
 const StyledImage = styled(BackgroundImage)`
-  height: 92vh;
+  height: 90vh;
   width: 100%;
+
+  @media screen and (min-width: 1024px) and (max-width: 1024px) {
+    height: 70vh;
+  }
+
 `
 const Container = styled.div`
   
@@ -94,11 +101,13 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
+  
 `
 const Box= styled.section`
   width: 45vw;
   margin-top: 6rem;
   padding: 3rem;
+  
   /* background: rgba(255,255,255,0.2); */
 
   @media screen and (max-width: 1094px){

@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import {Link} from 'gatsby'
 import {AiOutlineMenu} from 'react-icons/ai'
 
+import logo from '../../images/icons/jpc-logocir.png'
+
 import * as palette from '../../variables/Variables'
 
 const MobileNav = () => {
@@ -11,12 +13,14 @@ const MobileNav = () => {
 
   return (
     <>
-    <Button
-      onClick={() => setOpen(!isOpen)}
-    >
-      <AiOutlineMenu/>
-    </Button>
-
+    <LogoButtonBar>
+      <Logo src={logo}/>
+      <Button
+        onClick={() => setOpen(!isOpen)}
+      >
+        <AiOutlineMenu/>
+      </Button>
+    </LogoButtonBar>
     {isOpen ? 
     <MobileNavigation>
       
@@ -56,9 +60,22 @@ const MobileNavigation = styled.nav`
   height: 100vh;
   width: 100vw;
   z-index: 2000;
-
-  /* transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
-  transform: ${props => (props.show ? 'none' : 'translate(0, -100%)')}; */
+`
+const LogoButtonBar = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100vw;
+`
+const Logo = styled.img`
+  height: 60px;
+  width: 80px;
+  z-index: 2001;
+  margin: 20px 0 0 20px;
 `
 const Button = styled.button`
   display: block;

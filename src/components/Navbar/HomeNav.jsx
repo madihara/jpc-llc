@@ -122,9 +122,9 @@ const Nav = styled.nav`
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1030;
+  z-index: 2030;
 
-  /* visibility: ${props => (props.show ? 'visible' : 'hidden')}; */
+  visibility: ${props => (props.show ? 'visible' : 'hidden')};
   transition: all 200ms ${props => (props.show ? 'ease-in' : 'ease-out')};
   transform: ${props => (props.show ? 'none' : 'translate(0, -100%)')};
 
@@ -154,6 +154,9 @@ const Links = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width: 1036px) {
+    margin-right: 2rem;
+  }
 
 `
 
@@ -225,9 +228,8 @@ const PhoneBox = styled(Link)`
     color: ${palette.MAIN_COLOR};
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1036px) {
     display: none;
-    color: red;
   }
   
 `

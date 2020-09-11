@@ -14,7 +14,7 @@ const Layout = ({ children}) => {
   const width = useWindowSize()
   
   let navbar;
-  if(width > 1136) {
+  if(width > 936) {
     navbar = <NavBar />
   } else{
     navbar = <MobileNav />
@@ -32,7 +32,7 @@ const Layout = ({ children}) => {
 }
 
 const useWindowSize = () => {
-  const [size, setSize] = useState(window.innderWidth)
+  const [size, setSize] = useState(window.innerWidth)
   useEffect(() => {
     const handleResize = () => {
       setSize(window.innerWidth)
