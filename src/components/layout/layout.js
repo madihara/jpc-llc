@@ -6,9 +6,6 @@ import NavBar from '../Navbar/HomeNav'
 import MobileNav from '../Navbar/MobileNav'
 
 
-
-
-
 const Layout = ({ children}) => {
 
   const width = useWindowSize()
@@ -17,9 +14,8 @@ const Layout = ({ children}) => {
   if(width > 936) {
     navbar = <NavBar />
   } else{
-    navbar = <MobileNav />
+  navbar = <MobileNav /> 
   }
-
 
       return (
         <OverflowHidden>
@@ -28,17 +24,42 @@ const Layout = ({ children}) => {
           <Footer/>
         </OverflowHidden>
       )
-    
 }
 
-const useWindowSize = () => {
+// const useWindowSize = (initialState = "100%", { ttl = 100 } = {}) => {
+//   // initialState is used before the component mounts client-side
+//   const [height, setHeight] = useState(initialState)
+
+//   useEffect(() => {
+//     const calculateHeight = debounce(() => {
+//       setHeight(window.innerHeight)
+//     }, ttl)
+
+//     calculateHeight()
+//     window.addEventListener("resize", calculateHeight)
+
+//     return () => {
+//       // deregister event listener on component dismount
+//       window.removeEventListener("resize", calculateHeight)
+//     }
+//   }, [ttl])
+
+//   return height
+// }
+
+const useWindowSize = (initialState= '100%') => {
+  const [size, setSize] = useState(window.innerWidth) 
   useEffect(() => {
-  let windowWidth = window.innerWidth
-  const [size, setSize] = useState(windowWidth)
     const handleResize = () => {
       setSize(window.innerWidth)
     }
+
+    handleResize()
     window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
   },[])
   return size
 }
