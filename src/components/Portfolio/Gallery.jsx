@@ -16,7 +16,7 @@ const ImageCard = () => {
               name
               attributes
               image{
-                fluid
+                fluid(maxHeight: 400)
                   {
                     ...GatsbyContentfulFluid
                   }
@@ -106,16 +106,16 @@ const Gallery = styled.div`
   flex-flow: wrap;
   justify-content: stretch;
   height: 100%;
-  margin: 0 5px;
+  margin: 0 20px;
 `
 
 
 const ImageContainer = styled.div`
-  margin: 5px;
+  margin: 20px;
   overflow: hidden;
   height: 400px;
-  object-fit: cover;
-  flex: 1 1 auto;
+  flex: 2 0 auto;
+  
 
   @media screen and (max-width: 1008px) {
     flex: 1 1 auto;
@@ -130,6 +130,7 @@ const StyledBackgroundImage = styled(BackgroundImage)`
   justify-content: center;
   align-items: center;
   opacity: 0.6;
+  object-fit: cover;
 /* 
   &:hover{
     transform: scale(1.1);
@@ -178,6 +179,9 @@ const InformationContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 1076px) {
+    padding: 6rem 3rem;
+  }
 `
 
 const Text = styled.p`
@@ -185,6 +189,8 @@ const Text = styled.p`
   margin: 0;
   font-size: 1.1rem;
   text-align: center;
+
+
 `
 const InfoText = styled.div`
   color: white;

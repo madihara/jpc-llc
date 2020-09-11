@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import './styles.css'
 import Footer from './Footer'
 import styled from 'styled-components'
@@ -11,10 +11,19 @@ import MobileNav from '../Navbar/MobileNav'
 
 const Layout = ({ children}) => {
 
+  const width = useWindowSize()
+  
+  let navbar;
+  if(width > 1136) {
+    navbar = <NavBar />
+  } else{
+    navbar = <MobileNav />
+  }
+
+
       return (
         <OverflowHidden>
-          {/* <MobileNav /> */}
-          <NavBar />
+          {navbar}
             <main>{children}</main>
           <Footer/>
         </OverflowHidden>
@@ -22,8 +31,20 @@ const Layout = ({ children}) => {
     
 }
 
+const useWindowSize = () => {
+  const [size, setSize] = useState(window.innderWidth)
+  useEffect(() => {
+    const handleResize = () => {
+      setSize(window.innerWidth)
+    }
+    window.addEventListener('resize', handleResize)
+  },[])
+  return size
+}
+
 const OverflowHidden=styled.div`
   overflow-x: hidden;
+  height: 100%;
 `
 
 export default Layout

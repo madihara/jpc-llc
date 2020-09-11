@@ -7,25 +7,42 @@ import * as palette from '../../variables/Variables'
 
 
 const CapabilitesPage = () => {
+
+  const options = {
+    renderNode: {
+      "embedded-asset-block": node => {
+        const alt = node.data.target.fields.title["en-US"]
+        const url = node.data.target.fields.file["en-US"].url
+        return <Image alt={alt} src={url} />
+      },
+    },
+  }
   
   const capabilities = useStaticQuery(
     graphql`
       query{
-        allContentfulCapabilitiesTabs{
+        allContentfulCapabilitiesTabs(sort: {fields: id}){
           edges{
             node{
               name
+              image{
+                fluid{
+                  src
+                }
+              }
               description{
                 json
               }
             }
           }
         }
-      }   
+      } 
     `
   )
 
-  const [active, setActive] = useState({name:'Fabrics', description:''});
+  const [active, setActive] = useState({name:'die press cutting'});
+
+
 
   return (
    <div style={{height: '100%'}}>
@@ -34,29 +51,32 @@ const CapabilitesPage = () => {
     </Hero>
     <Container>
       <Column>
-      {capabilities.allContentfulCapabilitiesTabs.edges.map((edge) => {
+        
+      {capabilities.allContentfulCapabilitiesTabs.edges.map((edge,index) => {
         return(
-          <div>
+          <>
             <Tab 
               key={edge.node.name}
               active={active.name === edge.node.name}
               onClick={() => setActive({
-                name: `${edge.node.name}`,
-                description: `${documentToReactComponents(edge.node.description.json)}`
+                name: `${edge.node.name}`
               })}
              >{edge.node.name}</Tab>
+            
+         
              <Description
              active={active.name === edge.node.name}> 
                 {documentToReactComponents(edge.node.description.json)}
+                {edge.node.image ? <Image src={edge.node.image.fluid.src} /> : null}
              </Description>
-          </div>
+          
+         </>
         )
       })}
       </Column>
       <Column>
         <Info>
           <Heading> {active.name}</Heading>
-       
         </Info>
       </Column>
     </Container>
@@ -90,18 +110,37 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   padding: 3rem 10rem;
-  min-height: 200%;
+  height: 150vh;
+  /* flex-flow: wrap;
+  flex-direction: row-reverse; */
+
+
+  @media screen and (max-width: 1076px){
+    padding: 3rem 0;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
 `
 
 const Column = styled.div`
   display:flex;
   flex-direction: column;
   height: 100%;
+
+
+  @media screen and (max-width: 1076px){
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
 `
+
 const Tab = styled.button`
   cursor: pointer;
   width: 250px;
-  height: 50px;
+  height: 60px;
   border-left: none;
   border-right: none;
   border-top: 1px solid black;
@@ -112,22 +151,40 @@ const Tab = styled.button`
   transition: .7s;
   outline: none;
 
+  &:hover{
+    cursor: pointer;
+  }
+
 
   ${({ active }) =>
     active &&
     `
     background: ${palette.SECONDARY_COLOR};
     opacity: 1;
+    &:hover{
+    cursor: pointer;
+  }
   `}
   ${({equips}) =>
     equips &&
     `
     background: ${palette.SECONDARY_COLOR};
     `
-}     
+} 
+
+  @media screen and (max-width: 1076px){
+    width: 190px;
+    margin: 2px;
+  }
+
+  @media screen and (max-width: 448px) {
+    width: auto;
+  }
 `
 const Description = styled.div`
   display:none;
+  height: 100%;
+
   
 
   ${({active}) =>
@@ -137,18 +194,42 @@ const Description = styled.div`
     left: 475px;
     top: 478px;
     padding: 0 8rem 0 0;
+    height: 100%;
+  
     `
   }
 
     @media screen and (max-width: 1076px) {
-      display: block;
-      position: relative;
+      display: none;
+      position: absolute;
+
+      ${({active}) => 
+      active &&
+      `display: block;
+        position: absolute;
+        top: 600px;
+        left: 100px;
+        padding: 10px;
+        `
+    }
+    }
+
+    @media screen and (max-width: 378px) {
+      ${({active}) => 
+      active &&
+      `display: block;
+        position: absolute;
+        top: 660px;
+        left: 30px;
+        overflow: scroll;
+        `
+    }
     }
   
 `
 const Info = styled.section`
   padding: 0 4rem;
-  min-height: 630px;
+  height: 100%;
 `
 
 const Heading = styled.h5`
@@ -171,6 +252,17 @@ const Heading = styled.h5`
   @media screen and (max-width: 1076px){
     display:none;
   }`
+
+const Image = styled.img`
+  max-height: 400px;
+  object-fit: cover;
+  margin: 2px;
+
+  @media screen and (max-width: 1076px){
+    display: none
+  }
+`
+
 
 
 

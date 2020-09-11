@@ -6,7 +6,7 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import { FaTools,FaPhone} from 'react-icons/fa'
 import { MdPermMedia} from 'react-icons/md'
 import {GiFactory} from 'react-icons/gi'
-import {AiOutlineHome, AiOutlineInfoCircle} from 'react-icons/ai'
+import {AiOutlineHome, AiOutlineInfoCircle, AiFillShopping} from 'react-icons/ai'
 
 import logo from '../../images/icons/jpc-logocir.png'
 import * as palette from '../../variables/Variables'
@@ -84,11 +84,20 @@ const NavBar = () => {
               }}/>
              <h5>About Us</h5>
            </StyledLink>
+          {/* <StyledA 
+          href='http://www.trailshopjpc.myshopify.com'
+          target='_blank'>
+            <AiFillShopping 
+            style={{
+            fontSize: '24px'}}/>
+            <h5>Shop</h5>
+          </StyledA> */}
           <StyledLink to='/contact/'>
             <FaPhone 
             style={{
             fontSize: '24px'}}/>
-            <h5>Contact</h5></StyledLink>
+            <h5>Contact</h5>
+          </StyledLink>
       </Links>
       <PhoneBox to='/contact'>
         Free Quote
@@ -149,6 +158,30 @@ const Links = styled.div`
 `
 
 const StyledLink = styled(Link)`
+  text-decoration: none;
+  margin: 10px 1.2rem -5px;
+  font-size: 0.9rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: .7s;
+  
+  :hover{
+    color: ${palette.SECONDARY_COLOR};
+  }
+
+  h5{
+    font-weight: 300;
+  }
+
+  @media screen and (max-width: 900px) {
+    margin: 15px 0.8rem -5px;
+  }
+`
+
+const StyledA = styled.a`
   text-decoration: none;
   margin: 10px 1.5rem -5px;
   font-size: 0.9rem;

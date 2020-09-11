@@ -83,6 +83,7 @@ const Box = styled.div`
   padding: 8px 8px 20px;
   flex-grow: 1;
   flex-shrink: 1;
+  
 `
 const Icon = styled.div`
   position: absolute;
@@ -108,7 +109,7 @@ const Info = styled.p`
 
 const LearnMore = styled(Link)`
   font-weight: 600;
-  margin: 0 0 6px;
+  margin:  6px 0;
   text-transform: uppercase;
   margin-left: 15px;
   color: ${palette.SECONDARY_COLOR};

@@ -79,21 +79,31 @@ const ServicesInfo = () => {
 const Container = styled.div`
   display: flex;
   flex-direction: column-reverse;
+  margin: 4rem 0;
 `
 const Row= styled.section`
+  width: 85%;
   display: flex;
   justify-content: center;
-  margin: 4rem 6rem;
+  margin: 2rem 6rem;
   /* background: red; */
+
+  @media screen and (max-width: 600px){
+    margin: 1rem 0;
+  }
 `
 const ColoredBox=styled.div`
 `
 const SubHeading = styled.h3`
   font-weight: 800;
   text-transform: uppercase;
-  font-size: 2.3rem;
+  font-size: 2rem;
   position: relative;
   padding: 0 3rem;
+  
+  @media screen and (max-width: 600px){
+    padding: 0 1rem;
+  }
   
 
 
@@ -110,12 +120,21 @@ const SubHeading = styled.h3`
 const Text= styled.p`
   padding: 0 3rem;
   font-size: .9rem;
+
+  @media screen and (max-width:600px){
+    padding: 0 1rem;
+  }
 `
 const Image = styled.img`
-  width: 45%;
+  width: 35vw;
   height: 50vh;
   filter: grayscale(100);
   object-fit: fill;
+  padding: 0 3rem;
+
+  @media screen and (max-width: 1040px){
+    display: none;
+  }
 `
 
 // css`
