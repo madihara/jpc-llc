@@ -26,29 +26,9 @@ const Layout = ({ children}) => {
       )
 }
 
-// const useWindowSize = (initialState = "100%", { ttl = 100 } = {}) => {
-//   // initialState is used before the component mounts client-side
-//   const [height, setHeight] = useState(initialState)
-
-//   useEffect(() => {
-//     const calculateHeight = debounce(() => {
-//       setHeight(window.innerHeight)
-//     }, ttl)
-
-//     calculateHeight()
-//     window.addEventListener("resize", calculateHeight)
-
-//     return () => {
-//       // deregister event listener on component dismount
-//       window.removeEventListener("resize", calculateHeight)
-//     }
-//   }, [ttl])
-
-//   return height
-// }
 
 const useWindowSize = (initialState= '100%') => {
-  const [size, setSize] = useState(window.innerWidth) 
+  const [size, setSize] = useState(initialState) 
   useEffect(() => {
     const handleResize = () => {
       setSize(window.innerWidth)
