@@ -262,7 +262,7 @@ const Image = styled.img`
   margin: 2px;
 
   @media screen and (max-width: 1076px){
-    max-height: 300px;
+    height: 300px;
   }
 
   @media screen and (max-width: 414px) {

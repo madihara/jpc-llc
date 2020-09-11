@@ -10,6 +10,7 @@
   flex-flow: row wrap;
   background-color: #ececec;
   padding-top: 215px;
+  overflow-x: hidden;
 }
 
 .box1 {
@@ -94,7 +95,7 @@ br {
 
 @media screen and (max-width: 1276px) {
   .box1 {
-    width: 95vw;
+    width: 90vw;
     padding: 2rem;
     margin: 2rem;
 
@@ -106,5 +107,15 @@ br {
   }
   .box2 {
     display: none;
+  }
+
+  @media screen and (max-width: 695px) {
+    .container{
+      padding: 6rem 0;
+    }
+    .box1{
+      margin: 0;
+      width: 70vw;
+    }
   }
 }

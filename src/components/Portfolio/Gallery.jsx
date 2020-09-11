@@ -120,6 +120,10 @@ const ImageContainer = styled.div`
   @media screen and (max-width: 1008px) {
     flex: 1 1 auto;
   }
+
+  @media screen and (max-width: 768px){
+    height: 250px;
+  }
 `
 
 const StyledBackgroundImage = styled(BackgroundImage)`
@@ -157,20 +161,34 @@ const TitleBox = styled.div`
     cursor: pointer;
   }
 
-  
+  @media screen and (max-width: 768px){
+    width: 100px;
+  }
 `
 const Title= styled.h3`
   padding: 0;
   margin: 0;
   font-size: 1.6rem;
+
+  @media screen and (max-width: 768px){
+    font-size: 1rem;
+  }
 `
 const SubTitle= styled.h5`
   padding: 0;
   margin: 0;
   font-weight: normal;
+
+  @media screen and (max-width: 768px){
+    font-size: .7rem;
+  }
 `
 const ListItem = styled.li`
   text-transform: capitalize;
+
+  @media screen and (max-width: 768px){
+    font-size: 0.8rem;
+  }
 `
 
 const InformationContainer = styled.div`
@@ -182,6 +200,8 @@ const InformationContainer = styled.div`
   @media screen and (max-width: 1076px) {
     padding: 6rem 3rem;
   }
+
+
 `
 
 const Text = styled.p`
@@ -189,12 +209,19 @@ const Text = styled.p`
   margin: 0;
   font-size: 1.1rem;
   text-align: center;
-
+  
+  @media screen and (max-width: 768px){
+    font-size: .8rem;
+  }
 
 `
 const InfoText = styled.div`
   color: white;
   padding: 3rem;
+
+  @media screen and (max-width: 768px){
+    padding: 10px;
+  }
 `
 
 const OverlayContainer = styled.div`
@@ -217,6 +244,8 @@ const OverlayContainer = styled.div`
     bottom: 0;
     height: 100%;
   `}
+
+
 `
 
 const TitleSmall = styled.h5`
@@ -224,6 +253,10 @@ const TitleSmall = styled.h5`
   text-transform: uppercase;
   font-size: 1.2rem;
   text-align: center;
+
+  @media screen and (max-width: 768px){
+    font-size: .8rem;
+  }
 `
 
 export default ImageCard;
