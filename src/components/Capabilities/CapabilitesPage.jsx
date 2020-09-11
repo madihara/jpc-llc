@@ -120,7 +120,7 @@ const Container = styled.div`
     flex-direction: column;
   }
 
-  @media screen and (max-width: 1076px){
+  @media screen and (max-width: 999px){
     padding: 3rem 0;
     height: 120vh;
     flex-direction: column;
