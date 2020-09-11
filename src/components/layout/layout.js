@@ -32,9 +32,9 @@ const Layout = ({ children}) => {
 }
 
 const useWindowSize = () => {
+  useEffect(() => {
   let windowWidth = window.innerWidth
   const [size, setSize] = useState(windowWidth)
-  useEffect(() => {
     const handleResize = () => {
       setSize(window.innerWidth)
     }
