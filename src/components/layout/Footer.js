@@ -155,6 +155,7 @@ const ColumnRight = styled(Column)`
 const ColumnMiddle = styled(Column)`
   @media screen and (max-width: 630px) {
     display: none;
+    color: red;
   }
 `
 
