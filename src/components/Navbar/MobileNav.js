@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
-git
+
 
 import logo from '../../images/icons/jpc-logocir.png'
 
