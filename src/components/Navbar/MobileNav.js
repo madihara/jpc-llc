@@ -85,7 +85,7 @@ const Button = styled.button`
   color: ${palette.SECONDARY_COLOR};
   background: white;
   height: 60px;
-  width: 50px;
+  width: 40px;
   cursor: pointer;
   font-size: 2.4rem;
   display: flex;
@@ -101,6 +101,9 @@ const Button = styled.button`
 const Menu = styled.h5`
    color: '#212890';
    z-index: 3005;
+   position: fixed;
+   top: -20px;
+   right: 25px;
 `
 
 const LinksContainer = styled.div`
