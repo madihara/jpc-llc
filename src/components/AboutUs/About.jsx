@@ -26,7 +26,11 @@ const About = () => {
 
 const Image = styled.img`
   width: 100%;
-  height: 800px;
+  height: 500px;
   object-fit: cover;
+
+  @media screen and (max-width: 900px) {
+    height: 300px;
+  }
 `
 export default About;

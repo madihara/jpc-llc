@@ -18,7 +18,7 @@ const MobileNav = () => {
       <Button
         onClick={() => setOpen(!isOpen)}
       >
-        <AiOutlineMenu style={{color: 'white'}}/>
+        <AiOutlineMenu/>
       </Button>
     </LogoButtonBar>
     {isOpen ? 
@@ -80,20 +80,22 @@ const Logo = styled.img`
 const Button = styled.button`
   display: block;
   position: fixed;
-  top: 30px;
-  right: 30px;
-  color: white;
-  background: ${palette.MAIN_COLOR};
+  top: 25px;
+  right: 20px;
+  color: ${palette.SECONDARY_COLOR};
+  background: white;
   z-index: 2001;
   height: 60px;
   width: 60px;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 2.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50px;
   outline: none;
+  border: none;
+  box-shadow: 2px 2px 2px #848484;
 
 `
 
