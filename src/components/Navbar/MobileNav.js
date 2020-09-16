@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
-import {AiOutlineMenu} from 'react-icons/ai'
+
 
 import logo from '../../images/icons/jpc-logocir.png'
 
@@ -18,7 +18,7 @@ const MobileNav = () => {
       <Button
         onClick={() => setOpen(!isOpen)}
       >
-        <AiOutlineMenu style={{color: '#212890' }}/>
+        <h5 style={{color: '#212890' }}> 		&#9776;</h5>
       </Button>
     </LogoButtonBar>
     {isOpen ? 
