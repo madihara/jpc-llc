@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
-
+git
 
 import logo from '../../images/icons/jpc-logocir.png'
 
@@ -18,7 +18,7 @@ const MobileNav = () => {
       <Button
         onClick={() => setOpen(!isOpen)}
       >
-        <h5 style={{color: '#212890' }}> 		&#9776;</h5>
+        <h5 style={{color: '#212890' }}>&#9776;</h5>
       </Button>
     </LogoButtonBar>
     {isOpen ? 
@@ -86,7 +86,7 @@ const Button = styled.button`
   background: white;
   z-index: 2001;
   height: 60px;
-  width: 60px;
+  width: 50px;
   cursor: pointer;
   font-size: 2.4rem;
   display: flex;
