@@ -111,7 +111,7 @@ br {
 
   @media screen and (max-width: 695px) {
     .container{
-      padding: 6rem 0;
+      padding: 10rem 3rem;
     }
     .box1{
       margin: 0;

@@ -18,7 +18,7 @@ const MobileNav = () => {
       <Button
         onClick={() => setOpen(!isOpen)}
       >
-        <AiOutlineMenu/>
+        <AiOutlineMenu style={{color: 'white'}}/>
       </Button>
     </LogoButtonBar>
     {isOpen ? 

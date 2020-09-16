@@ -78,7 +78,10 @@ const TextContainer=styled.div`
   width: 50%;
   min-height: 70vh; 
   min-width: 300px;
-
+  
+  @media screen and (max-width: 742px) {
+    width: 90%;
+  }
 `
 
 const TextBox=styled.section`
@@ -98,7 +101,8 @@ const TextBox=styled.section`
   }
 
   @media screen and (max-width: 1183px) {
-    margin: 3rem 2rem;
+    margin: 3rem 1.5rem;
+    width: 90%;
   }
 `
 const Image = styled.img`
@@ -108,6 +112,10 @@ const Image = styled.img`
   width: 50%;
   flex-grow: 1;
   max-height: 500px;
+
+  @media screen and (max-width: 742px) {
+    display: none;
+  }
 `
 
 

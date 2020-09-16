@@ -80,6 +80,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column-reverse;
   margin: 4rem 0;
+
+  @media screen and (max-width: 742px) {
+    margin-top: -440px;
+  }
 `
 const Row= styled.section`
   width: 85%;
@@ -89,7 +93,8 @@ const Row= styled.section`
   /* background: red; */
 
   @media screen and (max-width: 600px){
-    margin: 1rem 0;
+    margin: 1rem;
+    width: 90%;
   }
 `
 const ColoredBox=styled.div`
@@ -132,7 +137,7 @@ const Image = styled.img`
   object-fit: fill;
   padding: 0 3rem;
 
-  @media screen and (max-width: 1040px){
+  @media screen and (max-width: 742px){
     display: none;
   }
 `
