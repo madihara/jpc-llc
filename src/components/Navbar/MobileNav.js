@@ -18,7 +18,7 @@ const MobileNav = () => {
       <Button
         onClick={() => setOpen(!isOpen)}
       >
-        <h5 style={{color: '#212890' }}>&#9776;</h5>
+        <h5 style={{color: '#212890', z-index: 3002}}>&#9776;</h5>
       </Button>
     </LogoButtonBar>
     {isOpen ? 
@@ -84,7 +84,6 @@ const Button = styled.button`
   right: 20px;
   color: ${palette.SECONDARY_COLOR};
   background: white;
-  z-index: 2001;
   height: 60px;
   width: 50px;
   cursor: pointer;
@@ -96,6 +95,7 @@ const Button = styled.button`
   outline: none;
   border: none;
   box-shadow: 2px 2px 2px #848484;
+  z-index: 3000;
 
 `
 
