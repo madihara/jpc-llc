@@ -91,7 +91,7 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50px;
+  border-radius: 50%;
   outline: none;
   border: none;
   box-shadow: 2px 2px 2px #848484;
