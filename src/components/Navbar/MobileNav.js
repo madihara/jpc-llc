@@ -108,8 +108,8 @@ const Button = styled.button`
   align-items: center;
   box-shadow: 0px 2px 8px #848484;
   position: fixed;
-  top: 21px;
-  right: 17px;
+  top: 20px;
+  right: 20px;
   margin-left: 10px;
   z-index: 3000;
   outline: none;
@@ -124,7 +124,7 @@ const Menu = styled.h5`
    justify-content: center;
    align-items: center; */
    font-size: 2.3rem;
-   margin-top: 30px;
+
 `
 
 const LinksContainer = styled.div`
