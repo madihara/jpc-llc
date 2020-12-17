@@ -58,7 +58,8 @@ const TitleBox= styled.div`
 
   @media screen and (max-width: 935px){
     margin-top: 0;
-    background: ${palette.MAIN_COLOR}
+    background: ${palette.MAIN_COLOR};
+    min-height: 50vh;
     
   }
 `
