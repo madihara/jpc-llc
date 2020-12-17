@@ -103,7 +103,7 @@ const Button = styled.button`
   width: 50px;
   background-color: white;
   color: ${palette.SECONDARY_COLOR};
-  font-size: 35px;
+  font-size: 1.4rem;
   display: block;
   justify-content: center;
   align-items: center;
