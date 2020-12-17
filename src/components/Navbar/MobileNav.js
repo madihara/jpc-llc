@@ -103,7 +103,7 @@ const Button = styled.button`
   width: 50px;
   background-color: white;
   color: ${palette.SECONDARY_COLOR};
-  display: block;
+  display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0px 2px 8px #848484;
@@ -120,9 +120,9 @@ const Button = styled.button`
 const Menu = styled.h5`
    color: '#212890';
    z-index: 3005;
-   display: flex;
+   /* display: flex;
    justify-content: center;
-   align-items: center;
+   align-items: center; */
    font-size: 2.4rem;
 `
 
