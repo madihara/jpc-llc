@@ -103,7 +103,6 @@ const Button = styled.button`
   width: 50px;
   background-color: white;
   color: ${palette.SECONDARY_COLOR};
-  font-size: 1.8rem;
   display: block;
   justify-content: center;
   align-items: center;
@@ -122,8 +121,9 @@ const Menu = styled.h5`
    color: '#212890';
    z-index: 3005;
    position: fixed;
-   top: -25px;
-   right: 29px;
+   /* top: -25px;
+   right: 29px; */
+   font-size: 2.4rem;
 `
 
 const LinksContainer = styled.div`
