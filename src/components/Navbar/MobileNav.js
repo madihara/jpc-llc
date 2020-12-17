@@ -70,7 +70,7 @@ const LogoButtonBar = styled.div`
   top: 0;
   left:0;
   width: 100vw;
-  height:100%;
+  
 `
 const Logo = styled.img`
   height: 60px;
