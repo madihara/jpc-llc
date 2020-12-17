@@ -109,14 +109,19 @@ br {
   .box2 {
     display: none;
   }
+}
+  @media screen and (max-width: 695px) {
+    .container{
+      background: var(--primaryColor);
+    }
 
   @media screen and (max-width: 695px) {
     .container{
-      padding: 10rem 3rem;
+      padding: 10rem 1rem 3rem;
     }
     .box1{
       margin: 0;
-      width: 70vw;
+      width: 90vw;
     }
   }
 }

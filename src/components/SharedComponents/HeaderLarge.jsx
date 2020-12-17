@@ -37,6 +37,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 935px){
     margin-top: 0;
+
   }
 
 `
@@ -54,6 +55,12 @@ const TitleBox= styled.div`
   align-items: center;
   text-transform: capitalize;
   flex: 1 1 auto;
+
+  @media screen and (max-width: 935px){
+    margin-top: 0;
+    background: ${palette.MAIN_COLOR}
+    
+  }
 `
 
 const Title= styled.h2`

@@ -28,6 +28,8 @@ const ImageCard = () => {
     `
   )
 
+
+
   const [isOpen, setIsOpen] = useState('')
 
 
@@ -90,6 +92,12 @@ const Hero = styled.div`
   margin-bottom: 3rem;
   height: 275px;
   padding-top: 115px;
+  
+  @media screen and (max-width: 935px){
+    padding-top: 60px;
+    opacity: 1;
+    
+  }
 `
 
 const HeroTitle= styled.h3`

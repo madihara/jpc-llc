@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const HeroImage = ({title}) => {
+const HeroImage = ({backgroundImg, title}) => {
   return (
-    <HeroWrapper>
+    <HeroWrapper
+       background={backgroundImg}>
       <TextWrapper>
-        
+        {title}
       </TextWrapper> 
     </HeroWrapper>
   )

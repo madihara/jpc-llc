@@ -9,7 +9,7 @@ import * as palette from '../../variables/Variables'
 
 const MobileNav = () => {
   const [isOpen, setOpen] = useState(false);
-  console.log(isOpen)
+  
 
   return (
     <>
@@ -84,8 +84,8 @@ const Button = styled.button`
   right: 20px;
   color: ${palette.SECONDARY_COLOR};
   background: white;
-  height: 3rem;
-  width: 3rem;
+  height: 50px;
+  width: 50px;
   cursor: pointer;
   font-size: 2.4rem;
   display: flex;

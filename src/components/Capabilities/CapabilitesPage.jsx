@@ -96,6 +96,12 @@ const Hero = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 935px){
+    padding-top: 60px;
+    opacity: 1;
+
+  }
 `
 
 const Title= styled.h3`
