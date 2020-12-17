@@ -101,6 +101,11 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
+  @media screen and (max-width: 1094px){
+ 
+    background: rgba(0,0,0,.4);
+  
+  }
   
 `
 const Box= styled.section`
@@ -112,6 +117,7 @@ const Box= styled.section`
 
   @media screen and (max-width: 1094px){
     width: 60vw;
+    padding-bottom: 1rem;
   }
 
   @media screen and (max-width: 600px) {
@@ -143,8 +149,9 @@ const SubTitle=styled.h3`
   padding: 1rem;
   margin: 0;
 
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 935px) {
     font-size: 0.8rem;
+    
   }
 `
 const ContactButton = styled.button`
