@@ -85,7 +85,7 @@ const Button = styled.button`
   color: ${palette.SECONDARY_COLOR};
   background: white;
   height: 50px;
-  width: 50px;
+  width: 30px;
   cursor: pointer;
   font-size: 2.4rem;
   display: flex;
