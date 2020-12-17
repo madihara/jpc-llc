@@ -78,14 +78,14 @@ const Logo = styled.img`
   margin: 20px 0 0 20px;
 `
 const Button = styled.button`
-  display: block;
+  /* display: block;
   position: fixed;
   top: 25px;
   right: 20px;
   color: ${palette.SECONDARY_COLOR};
   background: white;
   height: 50px;
-  width: 30px;
+  width: 50px;
   cursor: pointer;
   font-size: 2.4rem;
   display: flex;
@@ -95,7 +95,26 @@ const Button = styled.button`
   outline: none;
   border: none;
   box-shadow: 2px 2px 2px #848484;
+  z-index: 3000; */
+
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  color: ${palette.SECONDARY_COLOR};
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 2px 8px #848484;
+  position: fixed;
+  top: 21px;
+  right: 17px;
+  margin-left: 10px;
   z-index: 3000;
+  outline: none;
+  border: none;
+  cursor: pointer;
 
 `
 const Menu = styled.h5`
