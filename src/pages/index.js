@@ -89,7 +89,7 @@ const StyledImage = styled(BackgroundImage)`
   width: 100%;
 
   @media screen and (max-width: 1024px) {
-    height: 60vh;
+    height: 75vh;
   }
 
 `
