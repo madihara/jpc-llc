@@ -123,7 +123,7 @@ const Menu = styled.h5`
    /* display: flex;
    justify-content: center;
    align-items: center; */
-   font-size: 2.3rem;
+   font-size: 2rem;
 `
 
 const LinksContainer = styled.div`
