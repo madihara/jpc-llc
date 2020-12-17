@@ -70,6 +70,7 @@ const LogoButtonBar = styled.div`
   top: 0;
   left:0;
   width: 100vw;
+  height:100%;
 `
 const Logo = styled.img`
   height: 60px;
@@ -103,7 +104,7 @@ const Button = styled.button`
   background-color: white;
   color: ${palette.SECONDARY_COLOR};
   font-size: 35px;
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   box-shadow: 0px 2px 8px #848484;
