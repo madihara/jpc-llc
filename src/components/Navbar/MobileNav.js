@@ -120,9 +120,9 @@ const Button = styled.button`
 const Menu = styled.h5`
    color: '#212890';
    z-index: 3005;
-   position: fixed;
-   /* top: -25px;
-   right: 29px; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
    font-size: 2.4rem;
 `
 
