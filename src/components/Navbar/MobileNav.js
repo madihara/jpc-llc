@@ -124,7 +124,7 @@ const Menu = styled.h5`
    justify-content: center;
    align-items: center; */
    font-size: 2.3rem;
-   margin-top: -.3px;
+   margin-top: 30px;
 `
 
 const LinksContainer = styled.div`
