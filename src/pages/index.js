@@ -26,7 +26,7 @@ const IndexPage = ({data}) => (
           <Box>
             <Zoom><Title>WE SPECIALIZE IN COMMERCIAL SEWING.</Title>
             <SubTitle>
-            From large commercial production to custom projects, we  <br/>have the experience to make your next project a success.
+            From large commercial production to custom projects, we have the experience to make your next project a success.
             </SubTitle>
             <Link to='/contact'>
               <ContactButton>
